@@ -1,32 +1,206 @@
-.slid-content{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
+.swiper-slide-string {
+  padding: 0 100px;
+  flex: 1 1 45rem;
+  text-align: left;
+}
+.swiper-slide-string h3 {
+  font-size: 60px;
+  font-weight: bolder;
+  color: var(--black);
+  padding: 10px 0;
+}
+.swiper-slide-string span {
+  font-size: 35px;
+  color: var(--green);
+}
+.swiper-slide-string p {
+  font-size: 20px;
+  color: var(--black);
+  padding: 10px 0;
+}
+.swiper-slide-string a {
+  padding: 7px 30px;
+  background-color: var(--black);
+  color: #fff;
+  transition: 1s all;
+}
+.swiper-slide-string a:hover {
+  background-color: var(--green);
+  letter-spacing: 2px;
+}
+
+.swiper-slide-image {
+  flex: 1 1 45rem;
+}
+.swiper-slide-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.home-slider {
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  }
-  .slid-content .image{
-    width: 50%;
-    object-fit: contain;
-    object-position: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
-  }
-  .slid-content .content{
-    width: 50%;
-    padding: 0 100px;
-  }
+.home-slid {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 
-  .carousel{
-    min-height: 100vh;
-    margin-top: 300px;
-  }
-  /* .slide-item{
+@media (max-width: 991px) {
+  .home-slid {
+    flex-direction: column;
+    margin-top: 150px;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:aquamarine ;
-  } */
+  }
+  .home-slider {
+    height: 100%;
+  }
+  .swiper-slide-string h3 {
+    font-size: 50px;
+  }
+  .swiper-slide-string span {
+    font-size: 30px;
+  }
+  .swiper-slide-string p {
+    font-size: 15px;
+  }
+  .about-content{
+    flex-wrap: wrap;
+  }
+}
+
+.sub-heading {
+  text-align: center;
+  color: var(--green);
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  font-weight: bolder;
+}
+.heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.rivew {
+  background-color: #eee;
+  padding: 50px;
+}
+.revew-slide {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 7px;
+  padding: 10px;
+}
+.revew-slide:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.revew-slide img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.user-data {
+  display: flex;
+  align-items: center;
+}
+.fa-quote-right {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 80px;
+  color: #eee;
+}
+.user-coment {
+  padding: 20px 0;
+}
+.user-star {
+  padding: 0 10px;
+}
+.user-star .rating {
+  color: var(--green);
+}
+.user-star .user-name {
+  font-weight: bolder;
+}
+.about-content{
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 1.5rem;
+  align-items: center;
+  padding: 20px;
+}
+.about-content .aboute-text{
+  flex: 1 1 45rem;
+  padding: 10px;
+  line-height: 2;
+
+}
+.about-content .aboute-text h1{
+  color: var(--black);
+  font-weight: bolder;
+
+}
+.about-content .aboute-text p{
+}
+
+.about-content .image{
+  flex: 1 1 45rem;
+
+}
+.about-content .image img{
+  width: 100%;
+
+}
+.about-icons{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* margin-top: 20px; */
+  padding: 30px 0;
+}
+.about-icons .icons{
+  padding: 10px 37px;
+  background-color: #eee;
+  border-radius: 7px;
+  border:  1px solid rgba(0, 0, 0, 0.2);
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.about-icons .icons i{
+  color: var(--green);
+  font-size: 20px;
+}
+.about-icons .icons span{
+  color: var(--black);
+  margin-left: 2px;
+  font-size: 15px;
+
+}

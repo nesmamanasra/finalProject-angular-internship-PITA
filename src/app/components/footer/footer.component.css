@@ -1,0 +1,14 @@
+.footer-up:hover {
+  background:var(--green);
+  color: #fff;
+}
+
+.footer-up:hover .text-reset i {
+  color: #fff;
+}
+.footer-up .text-reset i:hover {
+  transform: scale(2);
+}
+footer{
+  display: block;
+}
