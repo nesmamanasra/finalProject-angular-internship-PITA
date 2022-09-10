@@ -27,6 +27,8 @@ input:focus {
   color: var(--green);
   font-size: 1.5rem;
   padding-top: 1rem;
+  font-weight: bolder;
+
 }
 .heading {
   text-align: center;
@@ -34,6 +36,7 @@ input:focus {
   font-size: 2.5rem;
   padding-bottom: 2rem;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .btn {
   padding: 7px 30px;

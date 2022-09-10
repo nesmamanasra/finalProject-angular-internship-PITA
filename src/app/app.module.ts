@@ -8,6 +8,12 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
 import { RecipePageComponent } from './pages/recipe-page/recipe-page.component';
 import { CocktailPageComponent } from './pages/cocktail-page/cocktail-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { SwiperModule } from 'swiper/angular';
+import { ItemDetailsComponent } from './pages/item-details/item-details.component';
+import { UserComentComponent } from './components/user-coment/user-coment.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +22,19 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     ItemCardComponent,
     RecipePageComponent,
     CocktailPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    FooterComponent,
+    ItemDetailsComponent,
+    UserComentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SwiperModule
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

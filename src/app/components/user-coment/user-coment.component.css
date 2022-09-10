@@ -1,0 +1,41 @@
+.revew-slide {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 7px;
+  padding: 10px;
+  margin:5px;
+}
+.revew-slide:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.revew-slide img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.user-data {
+  display: flex;
+  align-items: center;
+}
+.fa-quote-right {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 80px;
+  color: #eee;
+}
+.user-coment {
+  padding: 20px 0;
+}
+.user-star {
+  padding: 0 10px;
+}
+.user-star .rating {
+  color: var(--green);
+}
+.user-star .user-name {
+  font-weight: bolder;
+}

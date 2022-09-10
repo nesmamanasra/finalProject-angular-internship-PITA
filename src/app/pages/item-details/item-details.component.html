@@ -1,0 +1,67 @@
+<div class="about-section">
+  <div>
+    <h3 class="sub-heading">About Us </h3>
+    <h1 class="heading">WHY CHOOSE US?
+    </h1>
+  </div>
+  <div>
+    <div class="about-content container">
+      <div class="image">
+        <img src="../../../assets/img/about-imge.jpg" alt="">
+      </div>
+      <div class="aboute-text">
+        <h1>Beast Food In The Country </h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio reiciendis laboriosam, nihil ad culpa
+          esse iusto eius. Necessitatibus doloremque exercitationem provident obcaecati cum consectetur dignissimos in,
+          dicta excepturi modi nemo! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur error
+          laboriosam voluptatibus vel cum fuga natus in molestiae, molestias magni saepe eos dolor rerum! Aliquid est
+          odio omnis hic error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero saepe eaque, nemo fugit
+          tempore impedit quo perspiciatis ad ipsa iure nisi hic illum, porro, esse exer</p>
+        <!-- <div class="about-icons">
+            <div class="icons">
+                <i class="fas fa-shipping-fast"></i>
+                <span>Free Delivary</span>
+            </div>
+            <div class="icons">
+                <i class="fas fa-dollar-sign"></i>
+                <span>easy payment</span>
+            </div>
+            <div class="icons">
+                <i class="fas fa-headset"></i>
+                <span>24/7 service</span>
+            </div>
+
+        </div> -->
+        <div class="item-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="detail-buttons">
+            <input type="submit"class="delete-btn  " value="Delete">
+            <input type="submit"class="share-btn  " value="Share">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="searsh mb-5">
+  <div class="mb-3 inp ">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Add comment</label>
+    <div class="col-sm-10 col-lg-4 ">
+      <!-- <textarea name="" id="staticEmail" cols="30" rows="10"></textarea> -->
+      <form action="">
+        <input type="text" class="form-control bg-light" id="staticEmail">
+      </form>
+    </div>
+  </div>
+
+</div>
+<div class="coments container mb-5">
+  <div *ngFor="let coment of coments">
+    <app-user-coment></app-user-coment>
+  </div>
+</div>
