@@ -1,0 +1,118 @@
+.searsh {
+  height: 100px;
+  margin-top: 100px;
+  text-align: center;
+}
+label {
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+}
+.inp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  border-radius: 10px;
+}
+input:focus {
+  border: 3px solid rgba(255, 255, 255, 0.3) !important;
+}
+.content {
+  background-color: #eee;
+}
+.sub-heading {
+  text-align: center;
+  color: var(--green);
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+.heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}
+.btn {
+  padding: 7px 30px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #fff;
+  background: var(--black);
+  transition: 1s all;
+}
+.content-items .box .image {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.content-items .box {
+  overflow: hidden;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 3px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: var(--box-shadwo);
+  padding: 10px 50px;
+  margin: 10px;
+  position: relative;
+}
+
+.content-items  .box .fa-heart,
+.content-items  .box .fa-eye {
+  position: absolute;
+  top:30px;
+
+  background: #eee;
+  border-radius: 50%;
+  height:50px;
+  width: 50px;
+  line-height: 50px;
+  font-size:25px;
+  color: var(--black);
+  transition: 1s all;
+}
+.content-items  .box .fa-heart:hover,
+.content-items  .box .fa-eye:hover {
+  background-color: var(--green);
+  color: #fff;
+
+}
+.content-items .box .fa-heart {
+  right: -50px;
+}
+.content-items .box .fa-eye {
+  left: -50px;
+}
+.content-items .box:hover .fa-eye{
+left: 25px;
+}
+.content-items .box:hover .fa-heart{
+  right: 25px;
+  }
+.content-items .box p{
+  font-size: large;
+  font-weight: bolder;
+  margin: 20px 0px;
+}
+.content-items .box span{
+  font-size: large;
+  padding:0px 10px;
+  font-weight: 500;
+}
+.content-items .box a:hover {
+  background: var(--green);
+  letter-spacing: 0.1rem;
+}
+.content-items .box .image img {
+  height: 100%;
+}

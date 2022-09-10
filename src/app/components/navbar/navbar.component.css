@@ -1,0 +1,73 @@
+.navbar-brand{
+  width: 100px;
+}
+.navbar-brand img{
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.reg a{
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  color: var(--black);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: var(--box-shadwo);
+}
+
+nav  a {
+  border-radius: 0.5rem;
+  color: var(--light-color);
+  margin-left: 5px;
+  transition: 0.7s all;
+
+}
+.collapse a{
+  padding: 0.5rem 1rem;
+
+}
+.collapse {
+  /* text-align:center; */
+}
+
+
+nav div ul a.active,
+nav div ul a:hover,.reg a:hover {
+  background: var(--green);
+  color: #fff
+}
+header .icon i,
+header .icon a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--black);
+  border-radius: 50%;
+  background: #eee;
+}
+header .icon i:hover,
+header .icon a:hover {
+  background: var(--green);
+  color: #fff;
+  transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+
+}
