@@ -5,6 +5,9 @@
   align-items: center;
   padding: 20px;
 }
+.about-section{
+  margin-top: 130px;
+}
 .about-content .aboute-text{
   flex: 1 1 45rem;
   padding: 10px;
@@ -85,6 +88,7 @@ input:focus,textarea:focus {
 .item-rating{
 font-size: 30px;
 color: gold;
+background-color: #fff;
 }
 .detail-buttons .delete-btn,.share-btn{
   padding: 0px 35px;
@@ -93,6 +97,21 @@ color: gold;
   transition: 1s all;
   color: #fff;
 
+}
+.sub-heading {
+  text-align: center;
+  color: var(--green);
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  font-weight: bolder;
+}
+.heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .delete-btn:hover,.share-btn:hover{
   letter-spacing: 2px;

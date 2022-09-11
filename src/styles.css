@@ -22,3 +22,6 @@ html {
   scroll-padding-top: 5.5rem;
   scroll-behavior: smooth;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,16 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { SwiperModule } from 'swiper/angular';
 import { ItemDetailsComponent } from './pages/item-details/item-details.component';
 import { UserComentComponent } from './components/user-coment/user-coment.component';
-
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatTooltipModule } from '@angular/material/tooltip';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { UserRecipePageComponent } from './pages/user-recipe-page/user-recipe-page.component';
+import { UserCocktailPageComponent } from './pages/user-cocktail-page/user-cocktail-page.component';
+import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +35,25 @@ import { UserComentComponent } from './components/user-coment/user-coment.compon
     HomePageComponent,
     FooterComponent,
     ItemDetailsComponent,
-    UserComentComponent
+    UserComentComponent,
+    StarRatingComponent,
+    UserRecipePageComponent,
+    UserCocktailPageComponent,
+    UserProfilePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SwiperModule
+    SwiperModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTooltipModule,
+    MatToolbarModule
 
   ],
 
