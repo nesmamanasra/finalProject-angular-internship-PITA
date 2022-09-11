@@ -1,0 +1,174 @@
+.ueer-page{
+  margin-top: 90px;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  padding: 20px;
+  height: 90vh;
+}
+.user-data{
+height: 100%;
+width: 50%;
+padding: 30px;
+display: flex;
+flex-wrap: wrap;
+gap: 5px;
+}
+.user-profile{
+  height: 100%;
+  width: 50%;
+  display: flex;
+flex-direction: column;
+align-items: center;
+}
+.user-account-data{
+  text-align: center;
+
+}
+.user-account-data h3{
+  font-size: 30px;
+  padding: 20px ;
+
+}
+
+.user-profile .image {
+  height: 300px;
+  padding: 10px ;
+}
+
+.user-profile .image img{
+  height: 300px;
+  width:300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.favorate{
+  width: 45%;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1 1 40%; */
+}
+.favorate .fav-icon i{
+  height:50px;
+  width: 50px;
+  line-height: 50px;
+  background: #eee;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  color: red;
+}
+.favorate .fav-icon i:hover{
+  color: #fff;
+  background-color: red;
+}
+.favorate:hover,.cocktail:hover,.sugeest:hover,.recipe:hover{
+  background: none;
+}
+
+.sugeest{
+  width: 45%;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1 1 40%; */
+
+}
+.sugeest .fav-icon i{
+  height:50px;
+  width: 50px;
+  line-height: 50px;
+  background: #eee;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  color: var(--green);
+}
+.sugeest .fav-icon i:hover{
+  color: #fff;
+  background-color: var(--green);
+}
+.recipe{
+  width: 45%;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1 1 40%; */
+
+}
+.recipe .fav-icon i{
+  height:50px;
+  width: 50px;
+  line-height: 50px;
+  background: #eee;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  color: var(--black);
+}
+.recipe .fav-icon i:hover{
+  color: #fff;
+  background-color: var(--black);
+}
+.cocktail{
+  width: 45%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1 1 40%; */
+
+}
+.cocktail .fav-icon i{
+  height:50px;
+  width: 50px;
+  line-height: 50px;
+  background: #eee;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  color:yellowgreen;
+}
+.cocktail .fav-icon i:hover{
+  color: #fff;
+  background-color: yellowgreen;
+}
+
+@media(max-width:1024px){
+  .user-data{
+    width: 100%;
+  }
+  .user-profile{
+    width: 100%;
+  }
+
+  .ueer-page{
+    flex-direction: column;
+    height: max-content;
+  }
+  .favorate,.cocktail,.recipe,.sugeest{
+    width: 100%;
+    height: 300px;
+  }
+  .user-profile .image img{
+    height: 200px;
+    width:200px;
+  }
+}

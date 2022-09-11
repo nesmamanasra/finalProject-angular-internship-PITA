@@ -1,4 +1,4 @@
-<div class="about-section">
+<div class="about-section ">
   <div>
     <h3 class="sub-heading">About Us </h3>
     <h1 class="heading">WHY CHOOSE US?
@@ -33,11 +33,7 @@
 
         </div> -->
         <div class="item-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
+          <mat-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
         </div>
         <div class="detail-buttons">
             <input type="submit"class="delete-btn  " value="Delete">
