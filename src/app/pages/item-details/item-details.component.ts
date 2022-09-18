@@ -1,5 +1,8 @@
+import { Recipe } from './../../models/Recipe';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-item-details',
@@ -13,10 +16,18 @@ export class ItemDetailsComponent implements OnInit {
   starColor:StarRatingColor = StarRatingColor.accent;
   starColorP:StarRatingColor = StarRatingColor.primary;
   starColorW:StarRatingColor = StarRatingColor.warn;
-
-  constructor() { }
+  recipe?:any;
+  constructor(router:Router,public activeRouter: ActivatedRoute) {
+    console.log(router.paramsInheritanceStrategy )
+   }
 
   ngOnInit() {
+    this.activeRouter.queryParams.subscribe((params) => {
+      this.recipe = params["recipe"] ;
+      console.log(this.recipe +"this is from detail");
+    })
+
+    console.log(this.activeRouter.data)
   }
     onRatingChanged(rating:any){
     console.log(rating);

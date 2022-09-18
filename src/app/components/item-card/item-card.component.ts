@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Recipe } from 'src/app/models/Recipe';
 
 @Component({
   selector: 'app-item-card',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-card.component.css']
 })
 export class ItemCardComponent implements OnInit {
+  @Input('recipe')  recipe?:Recipe;
 
-  constructor() { }
+  constructor(public activeRouter: ActivatedRoute,public router: Router) {
+
+   }
 
   ngOnInit(): void {
-  }
 
+  }
+  navigateToRecipeDetails(recipe:any){
+    if (recipe) {
+      // console.log(this.recipe , "this recipe from card")
+      this.router.navigate([`itemDetail/${this.recipe}` , { recipe:this.recipe}]);
+
+  }
+  }
 }

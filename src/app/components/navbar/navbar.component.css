@@ -25,6 +25,7 @@ nav {
   justify-content: space-between;
   z-index: 1000;
   box-shadow: var(--box-shadwo);
+  font-size: 15px;
 }
 
 nav  a {

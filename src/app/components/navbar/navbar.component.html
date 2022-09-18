@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-5 home">
         <li class="nav-item">
-          <a class="nav-link active " aria-current="page" routerLink="">Home</a>
+          <a class="nav-link  " aria-current="page"  routerLink="">Home</a>
         </li>
 
 
@@ -17,24 +17,27 @@
           <a class="nav-link " href="#" tabindex="-1" >Contact us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link "  tabindex="-1"routerLink="recipePage" >recipe</a>
+          <a class="nav-link "  tabindex="-1"routerLink="recipePage" *ngIf="auths.setoginstatus()">recipe</a>
         </li><li class="nav-item">
-          <a class="nav-link "  tabindex="-1" routerLink="cocktailPage">cocktail</a>
+          <a class="nav-link "  tabindex="-1" routerLink="cocktailPage" *ngIf="auths.setoginstatus()">cocktail</a>
         </li>
 
-       
+
       </ul>
       <div>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-5 reg">
         <li class="nav-item">
-          <a class="nav-link" routerLink="userProfile">Profile</a>
+          <a class="nav-link" routerLink="userProfile" *ngIf="auths.setoginstatus()">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">register</a>
+          <a class="nav-link" routerLink="register" *ngIf="!auths.setoginstatus()">register</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link"  tabindex="-1" >login</a>
+          <a class="nav-link"  routerLink="login" *ngIf="!auths.setoginstatus()">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btun" *ngIf="auths.setoginstatus()" (click)="logOut()" >logout</a>
         </li>
       </ul>
     </div>
