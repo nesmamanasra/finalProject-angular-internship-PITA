@@ -1,0 +1,59 @@
+<div class="splet-screen">
+  <div class="left">
+    <section class="copy">
+      <h1>hello </h1>
+    </section>
+  </div>
+  <div class="right">
+    <form action="" #register="ngForm" (ngSubmit)="creatUser(register)">
+      <section class="copy">
+        <div class="register">
+          <p>
+            <strong>Creat Acount</strong>
+          </p>
+        </div>
+
+      </section>
+      <div class="input-section-first-name">
+        <label for="fname"> First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="First Name" ngModel minlength="3" required>
+      </div>
+      <div class="input-section-last-name">
+        <label for="lname"> Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Last Name" ngModel ngModel minlength="3" required>
+      </div>
+      <div class="input-section-email">
+        <label for="email"> Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" ngModel required>
+      </div>
+      <div class="input-section-password">
+        <label for="password"> Password</label>
+        <input #password="ngModel" type="password" id="password" name="password"  placeholder="Password" ngModel required >
+      </div>
+      <div class="input-section-CoPassword">
+        <label for="img"> Image URL </label>
+        <input #img="ngModel"  type="text" id="img" name="img" placeholder=" Image URL" ngModel required>
+      </div>
+      <div class="input-section-address">
+        <label for="address"> Address </label>
+        <input type="text" id="address" name="address" placeholder="address" ngModel required>
+      </div>
+      <div class="d-flex justify-content-between">
+      <div class="input-section-age">
+        <label for="age"> Your Age </label>
+        <input type="number" id="age" name="age" placeholder="Age" ngModel required>
+      </div>
+
+      <div class="input-section-gender">
+        <label for="gender"> Gender </label>
+        <select name="gender" id="gender"  class="" [(ngModel)]="g" required>
+          <option  disabled selected>Gender</option>
+          <option [ngValue]="gg" *ngFor="let gg of gender">{{gg}}</option>
+        </select>
+      </div>
+    </div>
+
+          <button class="reg-btn">Submit</button>
+    </form>
+  </div>
+</div>

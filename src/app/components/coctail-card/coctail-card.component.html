@@ -1,0 +1,16 @@
+<div class="box">
+  <div>
+    <a href=""><i class="fa-solid fa-eye"></i></a>
+    <a href=""><i class="fa-solid fa-heart"></i></a>
+  </div>
+  <div class="image">
+    <img [src]="coctail?.image" alt="">
+  </div>
+  <div class="box-content">
+    <p class="title">{{coctail?.name}} </p>
+  </div>
+  <div class="box-btn">
+    <span class="servings"></span>
+    <a  class="btn"   (click)="navigateToCocktailDetails(coctail)"> Details</a>
+  </div>
+</div>

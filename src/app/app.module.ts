@@ -24,7 +24,12 @@ import {MatTooltipModule } from '@angular/material/tooltip';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { UserRecipePageComponent } from './pages/user-recipe-page/user-recipe-page.component';
 import { UserCocktailPageComponent } from './pages/user-cocktail-page/user-cocktail-page.component';
-import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component'
+import { UserProfilePageComponent } from './pages/user-profile-page/user-profile-page.component';
+import { CoctailCardComponent } from './components/coctail-card/coctail-card.component';
+import { FavoratePageComponent } from './pages/favorate-page/favorate-page.component';
+import { SugesstPageComponent } from './pages/sugesst-page/sugesst-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +44,12 @@ import { UserProfilePageComponent } from './pages/user-profile-page/user-profile
     StarRatingComponent,
     UserRecipePageComponent,
     UserCocktailPageComponent,
-    UserProfilePageComponent
+    UserProfilePageComponent,
+    CoctailCardComponent,
+    FavoratePageComponent,
+    SugesstPageComponent,
+    LoginPageComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,

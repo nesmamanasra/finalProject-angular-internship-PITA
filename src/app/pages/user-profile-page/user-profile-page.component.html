@@ -2,14 +2,14 @@
   <div class="user-data">
     <div class="favorate">
       <div class="fav-icon">
-        <a href=""><i class="fa-solid fa-heart"></i> </a>
+        <a routerLink="../favorate"><i class="fa-solid fa-heart"></i> </a>
       </div>
       <h3>Favorate</h3>
     </div>
 
         <div class="sugeest">
       <div class="fav-icon">
-        <a href=""><i class="fa-solid fa-bowl-food"></i></a>
+        <a routerLink="../sugest"><i class="fa-solid fa-bowl-food  "></i></a>
       </div>
       <h3>suggestion</h3>
     </div>
@@ -32,8 +32,8 @@
       <img src="../../../assets/img/user3.jpg" alt="">
     </div>
     <div class="user-account-data">
-      <h3> User Name</h3>
-      <h2>Email000@gmail.com</h2>
+      <h3> {{user?.fname }}  {{user?.lname}}</h3>
+      <h2>{{user?.email}}</h2>
     </div>
   </div>
 </div>

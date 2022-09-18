@@ -1,10 +1,12 @@
 
 <div class="searsh">
-  <div class="mb-3 inp ">
+  <div class="mb-3  " >
+    <form #recipeForm class="inp" (submit)="searsh(recipeForm)">
     <label for="staticEmail" class="col-sm-2 col-form-label">recipe Searsh</label>
     <div class="col-sm-10 col-lg-4 ">
-      <input type="search"  class="form-control bg-light" id="staticEmail" >
+      <input  name="recipeName" type="search"  class="form-control bg-light" id="staticEmail"  >
     </div>
+  </form>
   </div>
 
 </div>
@@ -15,8 +17,8 @@
   </div>
   <div class="content-items container">
 
-    <div *ngFor="let i of items">
-      <app-item-card></app-item-card>
+    <div *ngFor="let i of recipes">
+      <app-item-card [recipe]="i"></app-item-card>
 
     </div>
   </div>

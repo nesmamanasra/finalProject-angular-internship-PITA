@@ -7,12 +7,44 @@ label {
   font-weight: bold;
   font-family: "Nunito", sans-serif;
 }
+
+.choice-form{
+  margin-top: 100px;
+  padding: 10px;
+
+}
+.select-form{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.select-form form select{
+  padding: 5px 35px;
+  border: 1px solid rgba(0, 0,0, 0.4);
+  border-radius: 4px;
+}
+
+.add-btn a{
+  padding: 7px 30px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #fff;
+  background: var(--black);
+  transition: 1s all;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+.add-btn a:hover{
+  letter-spacing: 2px;
+  background: var(--green);
+
+}
 .inp {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 input {
   border-radius: 10px;
@@ -22,6 +54,8 @@ input:focus {
 }
 .content {
   background-color: #eee;
+  margin-top: 85px;
+
 }
 .sub-heading {
   text-align: center;

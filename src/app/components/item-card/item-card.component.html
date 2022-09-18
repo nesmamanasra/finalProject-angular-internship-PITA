@@ -4,13 +4,15 @@
     <a href=""><i class="fa-solid fa-heart"></i></a>
   </div>
   <div class="image">
-    <img src="../assets/img/dish-food.jpg" alt="">
+    <img [src]="recipe?.image" alt="">
   </div>
   <div class="box-content">
-    <p class="title">Lorem ipsum dolor sit amet </p>
+    <p class="title">{{recipe?.title}} </p>
   </div>
   <div class="box-btn">
-    <span class="servings">servings</span>
-    <a  class="btn"   routerLink="../itemDetail"> Details</a>
+    <span class="servings">{{recipe?.servings}}</span>
+    <a  class="btn"   (click)="navigateToRecipeDetails(recipe)"> Details</a>
+    <!-- <a  class="btn"   routerLink="/itemDetail/3" [state]="{ hello: 'world' }"> Details</a> -->
+
   </div>
 </div>
