@@ -29,7 +29,7 @@ import { CoctailCardComponent } from './components/coctail-card/coctail-card.com
 import { FavoratePageComponent } from './pages/favorate-page/favorate-page.component';
 import { SugesstPageComponent } from './pages/sugesst-page/sugesst-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RegisterPageComponent } from './pages/register-page/register-page.component'
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +49,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     FavoratePageComponent,
     SugesstPageComponent,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
   ],
   imports: [
     BrowserModule,
