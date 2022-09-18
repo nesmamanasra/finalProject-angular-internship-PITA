@@ -1,0 +1,171 @@
+:root {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.5px;
+}
+
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 500;
+  --primary-color-blue: #233975;
+
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color-blue);
+}
+a:hover {
+  text-decoration: underline;
+}
+.small {
+  font-size: 80%;
+  text-align: center;
+}
+.splet-screen {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  height: 100vh;
+
+  /* max-height: max-content; */
+
+}
+.left {
+  height: 250px;
+}
+.right{
+  height: 100vh;
+
+}
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url(../../../assets/img/dish-food.jpg);
+  background-size: contain;
+}
+.left .copy {
+  color: #fff;
+  text-align: center;
+}
+.left p {
+  font-weight: 400;
+}
+.right{
+  background: rgb(238,174,202);
+  background: var(--green)
+
+}
+.right .copy {
+  color: #000;
+  text-align: center;
+}
+.right .copy p {
+  margin: 1.5rem;
+  font-size: 2rem;
+}
+.right form {
+  width: 350px;
+}
+.register{
+  color: var(--primary-color-blue);
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #c4c4c4;
+  padding: 7px;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+form input[type="number"]{
+  border-radius: 8px;
+  border: 1px solid #c4c4c4;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 7px;
+
+
+}
+form input::placeholder{
+  color: #d5d5d5;
+}
+.input-section-age, .input-section-gender{
+  display: inline-block;
+  box-sizing: border-box;
+
+  width: 45%;
+
+}
+.reg-btn{
+  display: block;
+  width: 100%;
+  background: #eeee;
+  color: var(--green);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.reg-btn:hover{
+}
+select{
+  border-radius: 8px;
+  border: 1px solid #c4c4c4;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 7px;
+
+}
+select::placeholder{
+  color: #d5d5d5;
+}
+
+label{
+  display: block;
+  margin-bottom: 1px;
+  margin-left: 5px;
+  color: #d5d5d5;
+  font-size: 16px;
+}
+
+
+@media(min-width:900px){
+  .splet-screen{
+    flex-direction: row;
+    /* height: 100vh; */
+    max-height: max-content;
+
+  }
+  .left,.right{
+    display: flex;
+    width: 50%;
+    height: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .splet-screen{
+    flex-direction: column;
+    height: 100vh;
+    /* max-height: max-content; */
+
+  }
+}
