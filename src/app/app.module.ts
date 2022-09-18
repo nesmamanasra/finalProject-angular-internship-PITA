@@ -30,6 +30,7 @@ import { FavoratePageComponent } from './pages/favorate-page/favorate-page.compo
 import { SugesstPageComponent } from './pages/sugesst-page/sugesst-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     SugesstPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,

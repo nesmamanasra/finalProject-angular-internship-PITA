@@ -1,23 +1,18 @@
 <div class="about-section ">
   <div>
-    <h3 class="sub-heading">About Us </h3>
-    <h1 class="heading">WHY CHOOSE US?
-    </h1>
+    <h3 class="sub-heading">Recipe Detail </h3>
+   
   </div>
   <div>
     <div class="about-content container">
       <div class="image">
-        <img src="../../../assets/img/about-imge.jpg" alt="">
+        <img src="{{recipe.image}}" alt="">
+
       </div>
       <div class="aboute-text">
-        <h1>Beast Food In The Country </h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio reiciendis laboriosam, nihil ad culpa
-          esse iusto eius. Necessitatibus doloremque exercitationem provident obcaecati cum consectetur dignissimos in,
-          dicta excepturi modi nemo! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur error
-          laboriosam voluptatibus vel cum fuga natus in molestiae, molestias magni saepe eos dolor rerum! Aliquid est
-          odio omnis hic error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero saepe eaque, nemo fugit
-          tempore impedit quo perspiciatis ad ipsa iure nisi hic illum, porro, esse exer</p>
-        
+        <h1>{{recipe.title}} </h1>
+        <p>{{recipe.instructions}}</p>
+
         <div class="item-rating">
           <mat-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
         </div>

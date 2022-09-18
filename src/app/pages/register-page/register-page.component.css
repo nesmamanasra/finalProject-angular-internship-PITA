@@ -63,8 +63,8 @@ a:hover {
   font-weight: 400;
 }
 .right{
-  background: rgb(238,174,202);
-  background: var(--green)
+  background: rgb(25,42,86);
+  background: linear-gradient(135deg, rgba(25,42,86,1) 11%, rgba(38,161,95,1) 79%);
 
 }
 .right .copy {
@@ -78,9 +78,6 @@ a:hover {
 .right form {
   width: 350px;
 }
-.register{
-  color: var(--primary-color-blue);
-}
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
@@ -91,20 +88,15 @@ form input[type="password"] {
   border: 1px solid #c4c4c4;
   padding: 7px;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.1);
 }
 form input[type="number"]{
   border-radius: 8px;
   border: 1px solid #c4c4c4;
   width: 100%;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.1);
   padding: 7px;
 
 
-}
-form input::placeholder{
-  color: #d5d5d5;
 }
 .input-section-age, .input-section-gender{
   display: inline-block;
@@ -116,8 +108,8 @@ form input::placeholder{
 .reg-btn{
   display: block;
   width: 100%;
-  background: #eeee;
-  color: var(--green);
+  background: var(--primary-color-blue);
+  color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -125,28 +117,27 @@ form input::placeholder{
   text-transform: uppercase;
 }
 .reg-btn:hover{
+  background:#2c4893
 }
 select{
   border-radius: 8px;
   border: 1px solid #c4c4c4;
   width: 100%;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.1);
   padding: 7px;
 
-}
-select::placeholder{
-  color: #d5d5d5;
-}
 
+}
+.input-section-gender
+{
+}
 label{
   display: block;
   margin-bottom: 1px;
   margin-left: 5px;
-  color: #d5d5d5;
-  font-size: 16px;
+  font-size: 0.9rem;
+  color: #eee;
 }
-
 
 @media(min-width:900px){
   .splet-screen{

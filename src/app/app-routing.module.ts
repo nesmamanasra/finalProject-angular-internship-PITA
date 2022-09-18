@@ -1,3 +1,4 @@
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { FavoratePageComponent } from './pages/favorate-page/favorate-page.component';
@@ -19,12 +20,14 @@ const routes: Routes = [
   {path:'recipePage',component:RecipePageComponent},
   {path:'login',component:LoginPageComponent},
   {path:'register',component:RegisterPageComponent},
-  {path:'itemDetail/:recipe',component:ItemDetailsComponent},
+  {path:'itemDetail',component:ItemDetailsComponent},
   {path:'userRecipe',component:UserRecipePageComponent},
   {path:'userCocktail',component:UserCocktailPageComponent},
   {path:'userProfile',component:UserProfilePageComponent},
   {path:'sugest',component:SugesstPageComponent},
   {path:'favorate',component:FavoratePageComponent},
+  {path:'contact',component:ContactPageComponent},
+
   {path:'**',component:HomePageComponent}
 
 
