@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'recipePage',component:RecipePageComponent},
   {path:'login',component:LoginPageComponent},
   {path:'register',component:RegisterPageComponent},
-  {path:'itemDetail/:recipe',component:ItemDetailsComponent},
+  {path:'itemDetail',component:ItemDetailsComponent},
   {path:'userRecipe',component:UserRecipePageComponent},
   {path:'userCocktail',component:UserCocktailPageComponent},
   {path:'userProfile',component:UserProfilePageComponent},

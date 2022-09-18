@@ -20,7 +20,7 @@ export class ItemCardComponent implements OnInit {
   navigateToRecipeDetails(recipe:any){
     if (recipe) {
       // console.log(this.recipe , "this recipe from card")
-      this.router.navigate([`itemDetail/${this.recipe}` , { recipe:this.recipe}]);
+      this.router.navigate([`itemDetail` , { data:JSON.stringify(this.recipe)}]);
 
   }
   }

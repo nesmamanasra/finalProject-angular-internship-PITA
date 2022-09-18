@@ -22,12 +22,9 @@ export class ItemDetailsComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.activeRouter.queryParams.subscribe((params) => {
-      this.recipe = params["recipe"] ;
-      console.log(this.recipe +"this is from detail");
-    })
-
-    console.log(this.activeRouter.data)
+    this.recipe =JSON.parse(JSON.parse(JSON.stringify(this.activeRouter.snapshot.paramMap.get('data'))));
+    console.log(this.recipe,"this data from details");
+  
   }
     onRatingChanged(rating:any){
     console.log(rating);
