@@ -10,10 +10,12 @@ import { User } from 'src/app/models/User';
 })
 export class UserProfilePageComponent implements OnInit {
 user?:User
+userImge?:string;
   constructor(private ApiService:ApiService, public AuthService:AuthService) {
    this.ApiService.getRecipeByName("fish");
    this.ApiService.getCocktailByName("apple");
    this.user = this.AuthService.userActive()
+   this.userImge =this.user?.imgUrl
   }
 
   ngOnInit(): void {

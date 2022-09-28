@@ -23,11 +23,15 @@
 
 .about-content .image{
   flex: 1 1 45rem;
+  width: 400px;
+  height: 400px;
 
 }
 .about-content .image img{
   width: 100%;
-
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .about-icons{
   display: flex;

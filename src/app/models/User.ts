@@ -5,11 +5,20 @@ export class User {
   lname: string;
   email: string;
   password: string;
-  imgUrl:string;
+  imgUrl: string;
   gender: string;
   address: string;
   age: number;
-  constructor(fname: string, lname: string, email: string, password: string, gender: string, address: string, age: number,imgUrl:string) {
+  constructor(
+    fname: string,
+    lname: string,
+    email: string,
+    password: string,
+    gender: string,
+    address: string,
+    age: number,
+    imgUrl: string
+  ) {
     this.fname = fname;
     this.lname = lname;
     this.email = email;
@@ -17,8 +26,8 @@ export class User {
     this.age = age;
     this.gender = gender;
     this.password = password;
-    this.userId = User.id;
-    this.imgUrl =imgUrl;
+    this.userId = Math.random();
+    this.imgUrl = imgUrl;
     User.id++;
   }
 }

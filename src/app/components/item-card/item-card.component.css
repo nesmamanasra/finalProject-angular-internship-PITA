@@ -22,6 +22,7 @@
   padding: 10px 50px;
   margin: 10px;
   position: relative;
+  width: 400px;
 }
 
   .box .fa-heart,
@@ -40,7 +41,7 @@
 }
   .box .fa-heart:hover,
   .box .fa-eye:hover {
-  background-color: var(--green);
+  background-color:red;
   color: #fff;
 
 }

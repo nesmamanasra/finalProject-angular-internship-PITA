@@ -1,3 +1,4 @@
+import { CocktailDetailsComponent } from './pages/cocktail-details/cocktail-details.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'login',component:LoginPageComponent},
   {path:'register',component:RegisterPageComponent},
   {path:'itemDetail',component:ItemDetailsComponent},
+  {path:'cocktailDetail',component:CocktailDetailsComponent},
   {path:'userRecipe',component:UserRecipePageComponent},
   {path:'userCocktail',component:UserCocktailPageComponent},
   {path:'userProfile',component:UserProfilePageComponent},

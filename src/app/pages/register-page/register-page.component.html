@@ -5,7 +5,7 @@
     </section>
   </div>
   <div class="right">
-    <form action="" #register="ngForm" (ngSubmit)="creatUser(register)">
+    <form [formGroup]="registerForm" action=""  (ngSubmit)="creatUser()">
       <section class="copy">
         <div class="register">
           <p>
@@ -16,37 +16,37 @@
       </section>
       <div class="input-section-first-name">
         <label for="fname"> First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="First Name" ngModel minlength="3" required>
+        <input type="text" id="fname" name="fname" placeholder="First Name" formControlName="fname">
       </div>
       <div class="input-section-last-name">
         <label for="lname"> Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Last Name" ngModel ngModel minlength="3" required>
+        <input type="text" id="lname" name="lname" placeholder="Last Name" formControlName="lname">
       </div>
       <div class="input-section-email">
         <label for="email"> Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" ngModel required>
+        <input type="email" id="email" name="email" placeholder="Email" formControlName="email">
       </div>
       <div class="input-section-password">
         <label for="password"> Password</label>
-        <input #password="ngModel" type="password" id="password" name="password"  placeholder="Password" ngModel required >
+        <input  type="password" id="password" name="password"  placeholder="Password" formControlName="password" >
       </div>
       <div class="input-section-CoPassword">
         <label for="img"> Image URL </label>
-        <input #img="ngModel"  type="text" id="img" name="img" placeholder=" Image URL" ngModel required>
+        <input   type="text" id="img" name="img" placeholder=" Image URL" formControlName="imgUrl">
       </div>
       <div class="input-section-address">
         <label for="address"> Address </label>
-        <input type="text" id="address" name="address" placeholder="address" ngModel required>
+        <input type="text" id="address" name="address" placeholder="address" formControlName="addres">
       </div>
       <div class="d-flex justify-content-between">
       <div class="input-section-age">
         <label for="age"> Your Age </label>
-        <input type="number" id="age" name="age" placeholder="Age" ngModel required>
+        <input type="number" id="age" name="age" placeholder="Age" formControlName="age">
       </div>
 
       <div class="input-section-gender">
         <label for="gender"> Gender </label>
-        <select name="gender" id="gender"  class="" [(ngModel)]="g" required>
+        <select name="gender" id="gender"  class="" [(ngModel)]="g" formControlName="gender">
           <option  disabled selected>Gender</option>
           <option [ngValue]="gg" *ngFor="let gg of gender">{{gg}}</option>
         </select>
@@ -54,6 +54,21 @@
     </div>
 
           <button class="reg-btn">Submit</button>
+          <p class="  text-warning m-3" *ngIf="registerForm.get('fname')?.invalid && registerForm.get('fname')?.touched">
+            {{
+              registerForm.get('fname')?.errors?.['required'] ? 'First Name is required' : ''
+            }}
+
+          </p>
+          <p class="  text-warning m-3" *ngIf="registerForm.get('lname')?.invalid && registerForm.get('lname')?.touched && registerForm.get('fname')?.valid ">
+            {{
+              registerForm.get('lname')?.errors?.['required'] ? 'Last Name is required' : ''
+            }}
+
+          </p>
+
+
+
     </form>
   </div>
 </div>

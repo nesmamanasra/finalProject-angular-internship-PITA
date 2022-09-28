@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Cocktail } from './../../models/Cocktail';
 import { Component, Input, OnInit } from '@angular/core';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-coctail-card',
@@ -10,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CoctailCardComponent implements OnInit {
   @Input('coctail')  coctail?:Cocktail;
 
-  constructor(public router:Router) {
+  constructor(public router:Router,public userdata:UserDataService) {
 
   }
 
@@ -19,9 +20,13 @@ export class CoctailCardComponent implements OnInit {
   }
   navigateToCocktailDetails(coctail:any){
     if (coctail) {
-      console.log(coctail + "this recipe from card")
-      this.router.navigate([`itemDetail/${this.coctail}`]);
+      // console.log(this.recipe , "this recipe from card")
+      this.router.navigate([`cocktailDetail` , { data:JSON.stringify(this.coctail)}]);
 
   }
   }
-}
+  favorate(){
+    this.userdata.addFavorateC(this.coctail as Cocktail);
+  }
+  }
+

@@ -11,11 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent implements OnInit {
   loginState:boolean =false;
   constructor(public auths:AuthService ,public route:Router) {
-    // this.loginState =auths.islogin();
 
-    console.log(this.loginState,"this is loginstatus from navbar comp")
-
-    console.log(auths.islogin(),"this is islogin method");
   }
 
   ngOnInit(): void {
@@ -25,7 +21,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut(){
-    console.log("this is logout method");
     localStorage.removeItem("loginUser");
     this.route.navigate(['login']);
 

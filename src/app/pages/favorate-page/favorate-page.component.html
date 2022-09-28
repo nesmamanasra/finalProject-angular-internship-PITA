@@ -6,9 +6,12 @@
   </div>
   <div class="content-items container">
 
-    <div *ngFor="let i of items">
-      <app-item-card ></app-item-card>
+    <div *ngFor="let i of recipeFav">
+      <app-item-card [recipe]="i.type"></app-item-card>
 
+    </div>
+    <div *ngFor="let i of cocktail">
+      <app-coctail-card [coctail]="i.type"></app-coctail-card>
     </div>
   </div>
 
