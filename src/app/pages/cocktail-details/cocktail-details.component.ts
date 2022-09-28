@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
+import { CardDataService } from 'src/app/services/card-data.service';
+import {Comment} from '../../models/Comment'
 
 @Component({
   selector: 'app-cocktail-details',
@@ -8,24 +10,33 @@ import { StarRatingColor } from 'src/app/components/star-rating/star-rating.comp
   styleUrls: ['./cocktail-details.component.css']
 })
 export class CocktailDetailsComponent implements OnInit {
-  coments?=[1,2,2,3,3,44,,4]
   rating:number = 0;
   starCount:number = 5;
   starColor:StarRatingColor = StarRatingColor.accent;
   starColorP:StarRatingColor = StarRatingColor.primary;
   starColorW:StarRatingColor = StarRatingColor.warn;
   cocktail?:any;
-  constructor(router:Router,public activeRouter: ActivatedRoute) {
-    console.log(router.paramsInheritanceStrategy )
+  comment:string ='';
+  cardComments?:Comment[]
+
+  constructor(router:Router,public activeRouter: ActivatedRoute,public cdetser: CardDataService) {
    }
 
   ngOnInit() {
     this.cocktail =JSON.parse(JSON.parse(JSON.stringify(this.activeRouter.snapshot.paramMap.get('data'))));
     console.log(this.cocktail,"this data from details");
+    this.cdetser.getcardCommits(this.cocktail).subscribe((params) => {
+      this.cardComments = params as Comment[]
+      
+    })
 
   }
     onRatingChanged(rating:any){
     console.log(rating);
     this.rating = rating;
+  }
+  addComment(){
+    this.cdetser.addCommit(this.comment,this.cocktail);
+    this.comment ='';
   }
 }

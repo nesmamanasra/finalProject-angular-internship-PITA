@@ -91,5 +91,10 @@ export class UserDataService {
     }
     return of(this.itemC);
   }
+  getSugeest() {}
   addSugeest() {}
+  addRicepe() {}
+  addCocktail() {}
+  getUserRecipe() {}
+  getUserCocktail() {}
 }
