@@ -15,6 +15,7 @@ import { CocktailPageComponent } from './pages/cocktail-page/cocktail-page.compo
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserCocktailPageComponent } from './pages/user-cocktail-page/user-cocktail-page.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
@@ -24,11 +25,11 @@ const routes: Routes = [
   {path:'register',component:RegisterPageComponent},
   {path:'itemDetail',component:ItemDetailsComponent},
   {path:'cocktailDetail',component:CocktailDetailsComponent},
-  {path:'userRecipe',component:UserRecipePageComponent},
-  {path:'userCocktail',component:UserCocktailPageComponent},
-  {path:'userProfile',component:UserProfilePageComponent},
-  {path:'sugest',component:SugesstPageComponent},
-  {path:'favorate',component:FavoratePageComponent},
+  {path:'userRecipe',component:UserRecipePageComponent, canActivate: [AuthGuard]},
+  {path:'userCocktail',component:UserCocktailPageComponent, canActivate: [AuthGuard]},
+  {path:'userProfile',component:UserProfilePageComponent, canActivate: [AuthGuard]},
+  {path:'sugest',component:SugesstPageComponent, canActivate: [AuthGuard]},
+  {path:'favorate',component:FavoratePageComponent, canActivate: [AuthGuard]},
   {path:'contact',component:ContactPageComponent},
 
   {path:'**',component:NotFoundComponent}
