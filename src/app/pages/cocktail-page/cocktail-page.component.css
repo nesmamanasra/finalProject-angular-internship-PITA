@@ -34,7 +34,7 @@ input:focus {
   text-align: center;
   color: var(--black);
   font-size: 2.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -69,7 +69,13 @@ input:focus {
   margin: 10px;
   position: relative;
 }
-
+.searsh-result{
+  color: var(--green);
+  font-size: 1.1rem;
+  padding: 20px 40px;
+  font-weight: bolder;
+  display: inline-block;
+}
 .content-items  .box .fa-heart,
 .content-items  .box .fa-eye {
   position: absolute;
@@ -118,4 +124,43 @@ left: 25px;
 }
 .content-items .box .image img {
   height: 100%;
+}
+
+
+.spanner {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spanner div {
+  height: 30vmin;
+  width: 35vmin;
+  text-align: center;
+}
+.spanner div span {
+  font-size: 6vmin;
+  font-family: cursive;
+  display: inline-block;
+  padding: 10px;
+}
+
+.spanner div img {
+  width: 100%;
+  height: 100%;
+  animation-name: spinn;
+  animation-duration: 3s;
+  object-fit: contain;
+  object-position: center;
+}
+@keyframes spinn {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  /* 100% {
+    transform: translateY(10px);
+  } */
 }

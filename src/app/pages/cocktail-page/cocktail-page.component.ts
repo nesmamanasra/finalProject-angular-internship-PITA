@@ -12,6 +12,8 @@ export class CocktailPageComponent implements OnInit {
   recipes?: Recipe[];
   cocktail?: Cocktail[];
   Imge: any;
+  searshcocktail?:string = "Cocktail"
+  cocktailName?:string
   constructor(private ApiFood: ApiService) {
     ApiFood.getImge('cocktail').subscribe(
       (params) => {
@@ -47,6 +49,7 @@ export class CocktailPageComponent implements OnInit {
   }
 
   searsh(recipeName: any) {
+    this.searshcocktail =this.cocktailName;
    this.ApiFood.getImge(recipeName.recipeName.value+" cocktail").subscribe(
       (params) => {
         console.log(params, 'this is imge ');
@@ -77,5 +80,6 @@ export class CocktailPageComponent implements OnInit {
         return null;
       }
     );
+    this.cocktailName =''
   }
 }
