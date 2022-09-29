@@ -21,6 +21,9 @@ input:focus {
 }
 .content {
   background-color: #eee;
+  margin-top: 85px;
+  height: 90vh;
+
 }
 .sub-heading {
   text-align: center;
@@ -54,7 +57,6 @@ input:focus {
 }
 .content-items {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -160,7 +162,16 @@ left: 25px;
   50% {
     transform: translateY(30px);
   }
-  /* 100% {
-    transform: translateY(10px);
-  } */
+  100% {
+    transform: translateY(0px);
+  }
+}
+.t404{
+  font-size: 15vmin;
+  font-family: cursive;
+}
+.notfound{
+  text-align: center;
+  font-size: 7vmin;
+
 }

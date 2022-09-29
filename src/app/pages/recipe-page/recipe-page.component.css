@@ -145,7 +145,7 @@ input:focus {
 
 .spanner div img {
   width: 100%;
-  animation-name: spinn;
+  animation: spinn 5s infinite;
   animation-duration: 3s;
   object-fit: contain;
   object-position: center;

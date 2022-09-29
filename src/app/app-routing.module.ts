@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CocktailDetailsComponent } from './pages/cocktail-details/cocktail-details.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
   {path:'favorate',component:FavoratePageComponent},
   {path:'contact',component:ContactPageComponent},
 
-  {path:'**',component:HomePageComponent}
+  {path:'**',component:NotFoundComponent}
 
 
 ];
