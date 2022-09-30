@@ -1,8 +1,8 @@
-import { Recipe } from './../../models/Recipe';
+import { CardDataService } from './../../services/card-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
-import { HttpParams } from '@angular/common/http';
+import {Comment} from '../../models/Comment'
 
 @Component({
   selector: 'app-item-details',
@@ -17,17 +17,25 @@ export class ItemDetailsComponent implements OnInit {
   starColorP:StarRatingColor = StarRatingColor.primary;
   starColorW:StarRatingColor = StarRatingColor.warn;
   recipe?:any;
-  constructor(router:Router,public activeRouter: ActivatedRoute) {
-    console.log(router.paramsInheritanceStrategy )
-   }
+  comment:string ='';
+  cardComments?:Comment[]
+  constructor(router:Router,public activeRouter: ActivatedRoute,public cdetser: CardDataService) {
+
+     }
 
   ngOnInit() {
     this.recipe =JSON.parse(JSON.parse(JSON.stringify(this.activeRouter.snapshot.paramMap.get('data'))));
-    console.log(this.recipe,"this data from details");
-  
+    this.cdetser.getcardCommits(this.recipe).subscribe((params) => {
+      this.cardComments = params as Comment[]
+    })
   }
     onRatingChanged(rating:any){
     console.log(rating);
     this.rating = rating;
+    this.cdetser.addRating(this.rating,this.recipe)
+  }
+  addComment(){
+    this.cdetser.addCommit(this.comment,this.recipe);
+    this.comment ='';
   }
 }

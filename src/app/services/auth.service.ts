@@ -20,17 +20,16 @@ export class AuthService {
       if(user.email == email && user.password == password){
         this.loginStat = true;
         localStorage.setItem("loginUser",JSON.stringify(this.loginStat));
-        // this.loginStat  = this.islogin();
         localStorage.setItem("userActive",JSON.stringify(user));
 
         AuthService.user = user;
-        console.log(AuthService.user,"this user login ");
           return user;
-      }else{
-        alert("email Or pasword have error");
-        return null;
       }
     }
+
+      alert("email Or pasword have error");
+      return null;
+
   }
   userActive(){
    return AuthService.user = JSON.parse( localStorage.getItem("userActive") as string)||[];
@@ -38,7 +37,6 @@ export class AuthService {
   }
   creatUser(user:User){
     let users =JSON.parse( localStorage.getItem("Users") as string)||[];
-    console.log("user From service ",user);
     const  newUser = new User(user.fname,user.lname,user.email,user.password,user.gender,user.address,user.age,user.imgUrl);
     users.push(newUser);
     localStorage.setItem("Users",JSON.stringify(users));

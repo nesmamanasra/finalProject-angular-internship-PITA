@@ -4,13 +4,15 @@
     <form #recipeForm class="inp" (submit)="searsh(recipeForm)">
     <label for="staticEmail" class="col-sm-2 col-form-label">cocktail Searsh</label>
     <div class="col-sm-10 col-lg-4 ">
-      <input  name="recipeName" type="search"  class="form-control bg-light" id="staticEmail"  >
+      <input  name="recipeName" type="search"  class="form-control bg-light" id="staticEmail" [(ngModel)]="cocktailName" >
     </div>
   </form>
   </div>
 
 </div>
 <div class="content ">
+  <p class="searsh-result">Search Result for : {{searshcocktail}}</p>
+
   <div>
     <h3 class="sub-heading">Our cocktail </h3>
     <h1 class="heading">popular cocktail</h1>
@@ -19,6 +21,13 @@
 
     <div *ngFor="let i of cocktail">
       <app-coctail-card [coctail]="i"></app-coctail-card>
+    </div>
+    <div class="spanner" *ngIf="!cocktail?.length">
+
+      <div>
+        <img src="../../../assets/img/pexels-ttr.png" alt="">
+        <span>Loading...</span>
+      </div>
     </div>
   </div>
 

@@ -10,10 +10,11 @@ import { Component, OnInit, Output } from '@angular/core';
 export class RecipePageComponent implements OnInit {
   recipes?:Recipe[];
   Image:any
+  recipeName?:string
+  searshresult?:string ='Food'
    constructor( private ApiFood:ApiService) {
     ApiFood.getImge('food').subscribe(
       (params) => {
-        console.log(params, 'this is imge ');
         this.Image = params;
       },
       (error) => {
@@ -26,7 +27,6 @@ export class RecipePageComponent implements OnInit {
   this.ApiFood.getRecipeByName('apple').subscribe(
     (params) => {
       this.recipes = params as Recipe[];
-      console.log(this.recipes, 'this is test ');
       for (let i =0; i <= this.recipes.length;i++) {
        this.recipes[i] ={
         title:this.recipes[i].title,
@@ -48,9 +48,10 @@ export class RecipePageComponent implements OnInit {
   }
 
   searsh(recipeName: any) {
+    this.searshresult = this.recipeName
+
     this.ApiFood.getImge(recipeName.recipeName.value+" food").subscribe(
        (params) => {
-         console.log(params, 'this is imge ');
          this.Image = params;
        },
        (error) => {
@@ -61,7 +62,6 @@ export class RecipePageComponent implements OnInit {
      this.ApiFood.getRecipeByName(recipeName.recipeName.value).subscribe(
        (params) => {
          this.recipes = params as Recipe[];
-         console.log(this.recipes, 'this is test ');
          for (let i =0; i <= this.recipes.length;i++) {
           this.recipes[i] ={
            title:this.recipes[i].title,
@@ -73,11 +73,13 @@ export class RecipePageComponent implements OnInit {
           };
 
          }
+
        },
        (error) => {
          console.log(error);
          return null;
        }
      );
+     this.recipeName = ''
    }
 }

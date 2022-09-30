@@ -8,6 +8,8 @@
   font-weight: bolder;
   color: var(--black);
   padding: 10px 0;
+  line-height: 1;
+
 }
 .swiper-slide-string span {
   font-size: 35px;
@@ -76,6 +78,7 @@
   }
   .swiper-slide-string h3 {
     font-size: 40px;
+
   }
   .swiper-slide-string span {
     font-size: 30px;

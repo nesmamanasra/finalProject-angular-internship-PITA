@@ -30,7 +30,9 @@ import { FavoratePageComponent } from './pages/favorate-page/favorate-page.compo
 import { SugesstPageComponent } from './pages/sugesst-page/sugesst-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
-import { ContactPageComponent } from './pages/contact-page/contact-page.component'
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { CocktailDetailsComponent } from './pages/cocktail-details/cocktail-details.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     SugesstPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    CocktailDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

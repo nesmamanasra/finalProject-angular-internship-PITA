@@ -1,17 +1,21 @@
 <div class="about-section ">
   <div>
-    <h3 class="sub-heading">Recipe Detail </h3>
-   
+    <h3 class="sub-heading">Cocktail Detail </h3>
+
   </div>
   <div>
     <div class="about-content container">
       <div class="image">
-        <img src="{{recipe.image}}" alt="">
+        <img src="{{cocktail.image}}" alt="">
 
       </div>
       <div class="aboute-text">
-        <h1>{{recipe.title}} </h1>
-        <p>{{recipe.instructions}}</p>
+        <h1>{{cocktail.title}} </h1>
+        <p>{{cocktail.instructions}}</p>
+        <div *ngFor="let item of cocktail.ingredients">
+          <p>{{item}}</p>
+        </div>
+
 
         <div class="item-rating">
           <mat-star-rating [rating]="rating"  [starCount]="starCount" [color]="starColor" (ratingUpdated)="onRatingChanged($event)"></mat-star-rating>
@@ -32,7 +36,7 @@
       <!-- <textarea name="" id="staticEmail" cols="30" rows="10"></textarea> -->
       <form #form="ngForm" (ngSubmit)="addComment()">
         <input type="text" name="Comment" [(ngModel)]="comment" class="form-control bg-light" id="staticEmail"  >
-        
+
       </form>
     </div>
   </div>

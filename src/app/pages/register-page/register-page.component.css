@@ -9,7 +9,6 @@
     "Lucida Sans", Arial, sans-serif;
   font-weight: 500;
   --primary-color-blue: #233975;
-
 }
 h1 {
   font-size: 4rem;
@@ -31,18 +30,15 @@ a:hover {
 .splet-screen {
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
   height: 100vh;
-
+  margin-top: 80px;
   /* max-height: max-content; */
-
 }
 .left {
   height: 250px;
 }
-.right{
+.right {
   height: 100vh;
-
 }
 .left,
 .right {
@@ -62,10 +58,13 @@ a:hover {
 .left p {
   font-weight: 400;
 }
-.right{
-  background: rgb(25,42,86);
-  background: linear-gradient(135deg, rgba(25,42,86,1) 11%, rgba(38,161,95,1) 79%);
-
+.right {
+  background: rgb(25, 42, 86);
+  background: linear-gradient(
+    135deg,
+    rgba(25, 42, 86, 1) 11%,
+    rgba(38, 161, 95, 1) 79%
+  );
 }
 .right .copy {
   color: #000;
@@ -89,23 +88,21 @@ form input[type="password"] {
   padding: 7px;
   margin-bottom: 1rem;
 }
-form input[type="number"]{
+form input[type="number"] {
   border-radius: 8px;
   border: 1px solid #c4c4c4;
   width: 100%;
   margin-bottom: 1rem;
   padding: 7px;
-
-
 }
-.input-section-age, .input-section-gender{
+.input-section-age,
+.input-section-gender {
   display: inline-block;
   box-sizing: border-box;
 
   width: 45%;
-
 }
-.reg-btn{
+.reg-btn {
   display: block;
   width: 100%;
   background: var(--primary-color-blue);
@@ -116,22 +113,18 @@ form input[type="number"]{
   font-weight: 700;
   text-transform: uppercase;
 }
-.reg-btn:hover{
-  background:#2c4893
+.reg-btn:hover {
+  background: #2c4893;
 }
-select{
+select {
   border-radius: 8px;
   border: 1px solid #c4c4c4;
   width: 100%;
   margin-bottom: 1rem;
   padding: 7px;
-
-
 }
-.input-section-gender
-{
-}
-label{
+
+label {
   display: block;
   margin-bottom: 1px;
   margin-left: 5px;
@@ -139,24 +132,25 @@ label{
   color: #eee;
 }
 
-@media(min-width:900px){
-  .splet-screen{
+@media (min-width: 900px) {
+  .splet-screen {
     flex-direction: row;
     /* height: 100vh; */
     max-height: max-content;
-
   }
-  .left,.right{
+  .left,
+  .right {
     display: flex;
     width: 50%;
     height: auto;
   }
 }
 @media (max-width: 1024px) {
-  .splet-screen{
+  .splet-screen {
     flex-direction: column;
     height: 100vh;
-    /* max-height: max-content; */
+    /* margin-top: 80px; */
 
+    /* max-height: max-content; */
   }
 }
