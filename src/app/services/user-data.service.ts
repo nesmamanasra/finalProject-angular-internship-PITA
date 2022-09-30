@@ -11,8 +11,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserDataService {
-  itemR: FavoriteR[] = [];
-  itemC: FavoriteC[] = [];
   itemForUser: FavoriteC[] = [];
   itemForUserR: FavoriteR[] = [];
   FavorateC: FavoriteC[] =
@@ -97,8 +95,8 @@ export class UserDataService {
     }
     return of(this.itemForUser);
   }
-  getSugeest() {}
   addSugeest() {}
+  getSugeest() {}
   addRicepe() {}
   addCocktail() {}
   getUserRecipe() {}
