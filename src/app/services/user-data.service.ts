@@ -11,85 +11,91 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserDataService {
-  itemR: any = [];
-  itemC: any = [];
-  constructor(public auths: AuthService) {}
+  itemR: FavoriteR[] = [];
+  itemC: FavoriteC[] = [];
+  itemForUser: FavoriteC[] = [];
+  itemForUserR: FavoriteR[] = [];
+  FavorateC: FavoriteC[] =
+    JSON.parse(localStorage.getItem('FavorateC') as string) || [];
+  FavorateR: FavoriteR[] =
+    JSON.parse(localStorage.getItem('FavorateR') as string) || [];
+  constructor(public auths: AuthService) {
+    this.getFavorateC().subscribe((params) => {
+      this.itemForUser = params;
+    });
+    this.getFavorateR().subscribe((params) => {
+      this.itemForUserR = params;
+    });
+  }
 
   addFavorate(recipe: Recipe) {
     const user: User = this.auths.userActive();
-    const Favorate: FavoriteR[] =
-      JSON.parse(localStorage.getItem('FavorateR') as string) || [];
-
-    for (let fav of Favorate) {
+    for (let fav of this.FavorateR) {
       if (
         user.userId == fav.user_id &&
         recipe.ingredients == fav.type.ingredients &&
         recipe.instructions == fav.type.instructions
       ) {
-        let index = Favorate.indexOf(fav);
-        Favorate.splice(index, 1);
-        this.itemR.splice(index, 1);
-        localStorage.setItem('FavorateR', JSON.stringify(Favorate));
+        let index = this.FavorateR.indexOf(fav);
+        let i = this.itemForUserR.indexOf(fav);
+        this.FavorateR.splice(index, 1);
+        this.itemForUserR.splice(i, 1);
+        localStorage.setItem('FavorateR', JSON.stringify(this.FavorateR));
 
         return;
       }
     }
-    Favorate.push({
+    this.FavorateR.push({
       id: 't' + Math.random(),
       user_id: user.userId,
       type: recipe,
       type_name: 'Recipe',
     });
-    localStorage.setItem('FavorateR', JSON.stringify(Favorate));
+    localStorage.setItem('FavorateR', JSON.stringify(this.FavorateR));
   }
   addFavorateC(coctail: Cocktail) {
     const user: User = this.auths.userActive();
-    const favorate: FavoriteC[] =
-      JSON.parse(localStorage.getItem('FavorateC') as string) || [];
-    for (let fav of favorate) {
+    for (let fav of this.FavorateC) {
       if (user.userId == fav.user_id && coctail.name == fav.type.name) {
-        let index = favorate.indexOf(fav);
-        favorate.splice(index, 1);
-        this.itemC.splice(index, 1);
-        localStorage.setItem('FavorateC', JSON.stringify(favorate));
+        let index = this.FavorateC.indexOf(fav);
+        let ind = this.itemForUser.indexOf(fav);
+        console.log(index, ind);
+        this.FavorateC.splice(index, 1);
+        this.itemForUser.splice(ind, 1);
+        localStorage.setItem('FavorateC', JSON.stringify(this.FavorateC));
 
         return;
       }
     }
-    favorate.push({
+
+    this.FavorateC.push({
       id: 't' + Math.random(),
       user_id: user.userId,
       type: coctail,
       type_name: 'Cocktail',
     });
-    localStorage.setItem('FavorateC', JSON.stringify(favorate));
+
+    localStorage.setItem('FavorateC', JSON.stringify(this.FavorateC));
   }
   getFavorateR(): Observable<any> {
     const user: User = this.auths.userActive();
-    const Favorate: FavoriteR[] =
-      JSON.parse(localStorage.getItem('FavorateR') as string) || [];
-    this.itemR.splice(0);
-    for (let fav of Favorate) {
-      if (fav.user_id == user.userId && fav.type_name == 'Recipe') {
-        this.itemR.push(fav);
+    this.itemForUserR.splice(0);
+    for (let fav of this.FavorateR) {
+      if (fav.user_id == user.userId) {
+        this.itemForUserR.push(fav);
       }
     }
-    return of(this.itemR);
+    return of(this.itemForUserR);
   }
   getFavorateC(): Observable<any> {
     const user: User = this.auths.userActive();
-    const Favorate: FavoriteC[] =
-      JSON.parse(localStorage.getItem('FavorateC') as string) || [];
-    let item = [];
-    this.itemC.splice(0);
-
-    for (let fav of Favorate) {
-      if (fav.user_id == user.userId && fav.type_name == 'Cocktail') {
-        item.push(fav);
-        this.itemC.push(fav);
+    this.itemForUser.splice(0);
+    for (let fav of this.FavorateC) {
+      if (fav.user_id == user.userId) {
+        this.itemForUser.push(fav);
       }
     }
-    return of(this.itemC);
+    return of(this.itemForUser);
   }
   getSugeest() {}
   addSugeest() {}

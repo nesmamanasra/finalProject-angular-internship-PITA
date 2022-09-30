@@ -11,14 +11,16 @@ import { Component, OnInit } from '@angular/core';
 export class FavoratePageComponent implements OnInit {
   recipeFav: FavoriteR[] = [];
   cocktail?: FavoriteC[] = [];
-  constructor(public userDs: UserDataService) {}
+  constructor(public userDs: UserDataService) {
+   userDs.getFavorateR().subscribe((params) => {
+      this.recipeFav = params;
+    });
+      userDs.getFavorateC().subscribe((params) => {
+      this.cocktail = params;
+    });
+  }
 
   ngOnInit(): void {
-    this.userDs.getFavorateR().subscribe((params) => {
-      this.recipeFav = params as FavoriteR[];
-    });
-    this.userDs.getFavorateC().subscribe((params) => {
-      this.cocktail = params as FavoriteC[];
-    });
+
   }
 }

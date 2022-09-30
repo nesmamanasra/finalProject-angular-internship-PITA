@@ -15,7 +15,6 @@ export class RecipePageComponent implements OnInit {
    constructor( private ApiFood:ApiService) {
     ApiFood.getImge('food').subscribe(
       (params) => {
-        console.log(params, 'this is imge ');
         this.Image = params;
       },
       (error) => {

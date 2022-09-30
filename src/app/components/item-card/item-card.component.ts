@@ -2,6 +2,7 @@ import { UserDataService } from './../../services/user-data.service';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from 'src/app/models/Recipe';
+import { CardDataService } from 'src/app/services/card-data.service';
 
 @Component({
   selector: 'app-item-card',
@@ -11,7 +12,7 @@ import { Recipe } from 'src/app/models/Recipe';
 export class ItemCardComponent implements OnInit {
   @Input('recipe')  recipe?:Recipe;
 
-  constructor(public activeRouter: ActivatedRoute,public router: Router,public userdata:UserDataService) {
+  constructor(public activeRouter: ActivatedRoute,public router: Router,public userdata:UserDataService,public cardser:CardDataService) {
 
    }
 

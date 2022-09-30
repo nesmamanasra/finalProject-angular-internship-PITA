@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       return new Promise(resolve => {
-        const sub = this.authService.islogin().subscribe((params) => {
+      this.authService.islogin().subscribe((params) => {
           if(params){
             resolve( true)
           }else{
@@ -21,7 +21,6 @@ export class AuthGuard implements CanActivate {
             resolve(false)
 
           }
-          sub.unsubscribe();
 
         })
       })

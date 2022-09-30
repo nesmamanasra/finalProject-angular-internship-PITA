@@ -160,7 +160,7 @@ align-items: center;
   }
 
   .ueer-page{
-    flex-direction: column;
+    flex-direction:column-reverse;
     height: max-content;
   }
   .favorate,.cocktail,.recipe,.sugeest{

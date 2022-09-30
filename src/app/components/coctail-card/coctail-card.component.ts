@@ -1,3 +1,4 @@
+import { CardDataService } from 'src/app/services/card-data.service';
 import { Router } from '@angular/router';
 import { Cocktail } from './../../models/Cocktail';
 import { Component, Input, OnInit } from '@angular/core';
@@ -10,8 +11,9 @@ import { UserDataService } from 'src/app/services/user-data.service';
 })
 export class CoctailCardComponent implements OnInit {
   @Input('coctail')  coctail?:Cocktail;
-
-  constructor(public router:Router,public userdata:UserDataService) {
+  status:boolean = false;
+  constructor(public router:Router,public userdata:UserDataService,public cardser:CardDataService) {
+  //  this.status = cardser.isfavorate(this.coctail);
 
   }
 
@@ -27,6 +29,8 @@ export class CoctailCardComponent implements OnInit {
   }
   favorate(){
     this.userdata.addFavorateC(this.coctail as Cocktail);
+    this.status=!this.status
+    console.log(this.status)
   }
   }
 

@@ -17,7 +17,6 @@ export class CocktailPageComponent implements OnInit {
   constructor(private ApiFood: ApiService) {
     ApiFood.getImge('cocktail').subscribe(
       (params) => {
-        console.log(params, 'this is imge ');
         this.Imge = params;
       },
       (error) => {
@@ -29,7 +28,6 @@ export class CocktailPageComponent implements OnInit {
     this.ApiFood.getCocktailByName('apple').subscribe(
       (params) => {
         this.cocktail = params as Cocktail[];
-        console.log(this.cocktail, 'this is test ');
         for (let i =0; i <= this.cocktail.length;i++) {
          this.cocktail[i] ={
           name:this.cocktail[i].name,

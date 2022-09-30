@@ -30,21 +30,16 @@
   position: absolute;
   top:30px;
 
-  background: #eee;
+  background: var(--black);
   border-radius: 50%;
   height:50px;
   width: 50px;
   line-height: 50px;
   font-size:25px;
-  color: var(--black);
+  color: #fff;
   transition: 1s all;
 }
-  .box .fa-heart:hover,
-  .box .fa-eye:hover {
-  background-color:red;
-  color: #fff;
 
-}
  .box .fa-heart {
   right: -50px;
 }
@@ -73,4 +68,8 @@ left: 25px;
 }
  .box .image img {
   height: 100%;
+}
+.fav{
+  color:var(--black);
+  background-color: red !important;
 }

@@ -13,6 +13,14 @@
     <div *ngFor="let i of cocktail">
       <app-coctail-card [coctail]="i.type"></app-coctail-card>
     </div>
+
+    <div class="spanner" *ngIf="!recipeFav?.length && !cocktail?.length">
+
+      <div>
+        <img src="../../../assets/img/dish-spinner-removebg-preview.png" alt="">
+        <span>Add some items Favorite to see it here</span>
+      </div>
+    </div>
   </div>
 
 </div>

@@ -93,6 +93,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 50px;
 }
 .content-items .box {
   overflow: hidden;
@@ -153,4 +154,41 @@ left: 25px;
 }
 .content-items .box .image img {
   height: 100%;
+}
+.spanner {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spanner div {
+  height: 40vmin;
+  width: 80vmin;
+  text-align: center;
+}
+.spanner div span {
+  font-size: 4vmin;
+  font-family: cursive;
+  display: inline-block;
+  padding: 10px;
+  line-height: 1;
+}
+
+.spanner div img {
+  height: 100%;
+  animation: spinn 5s infinite;
+  animation-duration: 3s;
+  object-fit: contain;
+  object-position: center;
+}
+@keyframes spinn {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  /* 100% {
+    transform: translateY(10px);
+  } */
 }

@@ -31,7 +31,6 @@ const routes: Routes = [
   {path:'sugest',component:SugesstPageComponent, canActivate: [AuthGuard]},
   {path:'favorate',component:FavoratePageComponent, canActivate: [AuthGuard]},
   {path:'contact',component:ContactPageComponent},
-
   {path:'**',component:NotFoundComponent}
 
 
