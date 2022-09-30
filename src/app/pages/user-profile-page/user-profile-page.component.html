@@ -7,7 +7,7 @@
       <h3>Favorate</h3>
     </div>
 
-        <div class="sugeest">
+    <div class="sugeest">
       <div class="fav-icon">
         <a routerLink="../sugest"><i class="fa-solid fa-bowl-food  "></i></a>
       </div>
@@ -29,10 +29,10 @@
   </div>
   <div class="user-profile">
     <div class="image">
-      <img [src]="userImge"  onerror=" this.src ='../../../assets/img/person-icon.png'" alt="User Image">
+      <img [src]="userImge" onerror=" this.src ='../../../assets/img/person-icon.png'" alt="User Image">
     </div>
     <div class="user-account-data">
-      <h3> {{user?.fname }}  {{user?.lname}}</h3>
+      <h3> {{user?.fname }} {{user?.lname}}</h3>
       <h2>{{user?.email}}</h2>
     </div>
   </div>

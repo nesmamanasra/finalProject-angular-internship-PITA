@@ -1,41 +1,40 @@
-.contact-form{
+.contact-form {
   height: 100vh;
-  /* background: #98d4f3; */
   background-image: url(../../../assets/img/food-bac.jpg);
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-form{
+form {
   max-width: 600px;
   height: 550px;
   padding: 50px;
   margin-top: 20px;
   border-radius: 10px;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   background: rgba(0, 0, 0, 0.3);
-
 }
-form input,textarea{
+form input,
+textarea {
   display: inline-block;
   background: rgba(255, 255, 255, 0.35);
-
 }
-form input::placeholder,textarea::placeholder{
+form input::placeholder,
+textarea::placeholder {
   color: #000;
 }
-form input:focus,textarea:focus{
+form input:focus,
+textarea:focus {
   background: rgba(255, 255, 255, 0.35);
-  }
-textarea{
+}
+textarea {
   resize: none;
   height: 250px;
 }
-.btn{
-  background-color:var(--black);
+.btn {
+  background-color: var(--black);
   color: #fff;
-
 }
-.btn:hover{
-  background: rgba(0, 0, 0  , 1);
+.btn:hover {
+  background: rgba(0, 0, 0, 1);
 }

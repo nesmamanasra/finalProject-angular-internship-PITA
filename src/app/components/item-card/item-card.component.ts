@@ -7,27 +7,29 @@ import { CardDataService } from 'src/app/services/card-data.service';
 @Component({
   selector: 'app-item-card',
   templateUrl: './item-card.component.html',
-  styleUrls: ['./item-card.component.css']
+  styleUrls: ['./item-card.component.css'],
 })
 export class ItemCardComponent implements OnInit {
-  @Input('recipe')  recipe?:Recipe;
+  @Input('recipe') recipe?: Recipe;
 
-  constructor(public activeRouter: ActivatedRoute,public router: Router,public userdata:UserDataService,public cardser:CardDataService) {
+  constructor(
+    public activeRouter: ActivatedRoute,
+    public router: Router,
+    public userdata: UserDataService,
+    public cardser: CardDataService
+  ) {}
 
-   }
-
-  ngOnInit(): void {
-
-  }
-  navigateToRecipeDetails(recipe:any){
+  ngOnInit(): void {}
+  navigateToRecipeDetails(recipe: any) {
     if (recipe) {
-      // console.log(this.recipe , "this recipe from card")
-      this.router.navigate([`itemDetail` , { data:JSON.stringify(this.recipe)}]);
-
+      this.router.navigate([
+        `itemDetail`,
+        { data: JSON.stringify(this.recipe) },
+      ]);
+    }
   }
-  }
 
-  favorate(){
+  favorate() {
     this.userdata.addFavorate(this.recipe as Recipe);
   }
 }

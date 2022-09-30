@@ -6,19 +6,17 @@ import { User } from 'src/app/models/User';
 @Component({
   selector: 'app-user-profile-page',
   templateUrl: './user-profile-page.component.html',
-  styleUrls: ['./user-profile-page.component.css']
+  styleUrls: ['./user-profile-page.component.css'],
 })
 export class UserProfilePageComponent implements OnInit {
-user?:User
-userImge?:string;
-  constructor(private ApiService:ApiService, public AuthService:AuthService) {
-   this.ApiService.getRecipeByName("fish");
-   this.ApiService.getCocktailByName("apple");
-   this.user = this.AuthService.userActive()
-   this.userImge =this.user?.imgUrl
+  user?: User;
+  userImge?: string;
+  constructor(private ApiService: ApiService, public AuthService: AuthService) {
+    this.ApiService.getRecipeByName('fish');
+    this.ApiService.getCocktailByName('apple');
+    this.user = this.AuthService.userActive();
+    this.userImge = this.user?.imgUrl;
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

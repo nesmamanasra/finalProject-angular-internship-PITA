@@ -13,7 +13,6 @@ export class CoctailCardComponent implements OnInit {
   @Input('coctail')  coctail?:Cocktail;
   status:boolean = false;
   constructor(public router:Router,public userdata:UserDataService,public cardser:CardDataService) {
-  //  this.status = cardser.isfavorate(this.coctail);
 
   }
 

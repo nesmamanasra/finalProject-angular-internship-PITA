@@ -1,6 +1,6 @@
 <div class="box">
   <div>
-    <a  (click)="favorate()"><i class="fa-solid fa-heart " [ngClass]="cardser.isfavorate(coctail) ? 'fav' : ''"></i></a>
+    <a (click)="favorate()"><i class="fa-solid fa-heart " [ngClass]="cardser.isfavorate(coctail) ? 'fav' : ''"></i></a>
   </div>
   <div class="image">
     <img [src]="coctail?.image" alt="">
@@ -10,7 +10,6 @@
   </div>
   <div class="box-btn">
     <span class="servings"></span>
-    <a  class="btn"   (click)="navigateToCocktailDetails(coctail)"> Details</a>
+    <a class="btn" (click)="navigateToCocktailDetails(coctail)"> Details</a>
   </div>
 </div>
-

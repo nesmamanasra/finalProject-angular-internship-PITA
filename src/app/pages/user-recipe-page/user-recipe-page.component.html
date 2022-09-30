@@ -1,27 +1,25 @@
-
 <div class="choice-form container">
   <div class="select-form">
     <form action="" class="">
-    <select class="" aria-label="Default select example">
-      <option value="3" selected>All Recipes</option>
-      <option value="1">Your Recipes</option>
-      <option value="2">Defult</option>
-    </select>
-  </form>
-  <div class="add-btn">
-    <a href="">Add Recipes</a>
-  </div>
+      <select class="" aria-label="Default select example">
+        <option value="3" selected>All Recipes</option>
+        <option value="1">Your Recipes</option>
+        <option value="2">Defult</option>
+      </select>
+    </form>
+    <div class="add-btn">
+      <a href="">Add Recipes</a>
+    </div>
   </div>
 </div>
 <div class="content ">
   <div>
     <h3 class="sub-heading">Your Recipes </h3>
-    <!-- <h1 class="heading">popular cocktail</h1> -->
   </div>
   <div class="content-items container">
 
     <div *ngFor="let i of items">
-      <app-item-card ></app-item-card>
+      <app-item-card></app-item-card>
 
     </div>
   </div>

@@ -30,7 +30,7 @@ input:focus {
   padding-top: 1rem;
   font-weight: bolder;
 }
-.searsh-result{
+.searsh-result {
   color: var(--green);
   font-size: 1.1rem;
   padding: 20px 40px;

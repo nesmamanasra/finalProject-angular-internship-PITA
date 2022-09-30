@@ -32,7 +32,6 @@ a:hover {
   flex-direction: column;
   height: 100vh;
   margin-top: 80px;
-  /* max-height: max-content; */
 }
 .left {
   height: 250px;
@@ -135,7 +134,6 @@ label {
 @media (min-width: 900px) {
   .splet-screen {
     flex-direction: row;
-    /* height: 100vh; */
     max-height: max-content;
   }
   .left,
@@ -149,8 +147,5 @@ label {
   .splet-screen {
     flex-direction: column;
     height: 100vh;
-    /* margin-top: 80px; */
-
-    /* max-height: max-content; */
   }
 }

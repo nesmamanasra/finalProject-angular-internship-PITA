@@ -7,52 +7,60 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.css']
+  styleUrls: ['./register-page.component.css'],
 })
 export class RegisterPageComponent implements OnInit {
-  g?:string;
-  gender:string[]=['Femail','Mail'];
-  registerForm :FormGroup;
+  g?: string;
+  gender: string[] = ['Femail', 'Mail'];
+  registerForm: FormGroup;
   errorMessage: string = '';
 
-  constructor(public fb:FormBuilder,public auths:AuthService ,public route:Router) {
+  constructor(
+    public fb: FormBuilder,
+    public auths: AuthService,
+    public route: Router
+  ) {
     this.registerForm = this.fb.group({
-      fname:[,Validators.required  ],
-      lname:[,Validators.required  ],
-      email:[,[Validators.required,Validators.email]  ],
-      password:[,Validators.required ],
-      addres:[,Validators.required  ],
-      age:[,Validators.required  ],
-      gender:[,Validators.required  ],
-      imgUrl:[,Validators.required]
-
-    })
-   }
-
-  ngOnInit(): void {
+      fname: [, Validators.required],
+      lname: [, Validators.required],
+      email: [, [Validators.required, Validators.email]],
+      password: [, Validators.required],
+      addres: [, Validators.required],
+      age: [, Validators.required],
+      gender: [, Validators.required],
+      imgUrl: [, Validators.required],
+    });
   }
-  creatUser(){
-    console.log(this.registerForm)
-    if(this.registerForm.status == "VALID"){
-    let fname =this.registerForm.value.fname;
-    let lname =this.registerForm.value.lname;
-    let age =this.registerForm.value.age;
-    let gender =this.registerForm.value.gender;
-    let email =this.registerForm.value.email;
-    let password =this.registerForm.value.password;
-    let img =this.registerForm.value.imgUrl;
-    let address =this.registerForm.value.address;
 
-    const  newUser = new User(fname,lname,email,password,gender,address,age,img);
-    this.auths.creatUser(newUser);
-    this.route.navigate(["login"]);
+  ngOnInit(): void {}
+  creatUser() {
+    console.log(this.registerForm);
+    if (this.registerForm.status == 'VALID') {
+      let fname = this.registerForm.value.fname;
+      let lname = this.registerForm.value.lname;
+      let age = this.registerForm.value.age;
+      let gender = this.registerForm.value.gender;
+      let email = this.registerForm.value.email;
+      let password = this.registerForm.value.password;
+      let img = this.registerForm.value.imgUrl;
+      let address = this.registerForm.value.address;
 
-    }else{
-      this.errorMessage = this.registerForm.getError("fname");
-      alert("Plese Check data");
+      const newUser = new User(
+        fname,
+        lname,
+        email,
+        password,
+        gender,
+        address,
+        age,
+        img
+      );
+      this.auths.creatUser(newUser);
+      this.route.navigate(['login']);
+    } else {
+      this.errorMessage = this.registerForm.getError('fname');
+      alert('Plese Check data');
     }
-
-
   }
 }
 

@@ -1,5 +1,4 @@
 import { Recipe } from './Recipe';
-import { Cocktail } from './Cocktail';
 
 export interface FavoriteR {
     id: string,
