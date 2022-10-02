@@ -6,7 +6,7 @@ import { FavoriteR } from './../models/FavoriteR';
 import { User } from './../models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
-
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root',
 })
@@ -17,7 +17,7 @@ export class UserDataService {
     JSON.parse(localStorage.getItem('FavorateC') as string) || [];
   FavorateR: FavoriteR[] =
     JSON.parse(localStorage.getItem('FavorateR') as string) || [];
-  constructor(public auths: AuthService) {
+  constructor(public auths: AuthService, private toast: ToastrService) {
     this.getFavorateC().subscribe((params) => {
       this.itemForUser = params;
     });
@@ -25,7 +25,13 @@ export class UserDataService {
       this.itemForUserR = params;
     });
   }
+  showTostersuccess(massege: string) {
+    this.toast.success(massege);
+  }
 
+  showTostererror(massege: string) {
+    this.toast.error(massege);
+  }
   addFavorate(recipe: Recipe) {
     const user: User = this.auths.userActive();
     for (let fav of this.FavorateR) {
@@ -38,7 +44,9 @@ export class UserDataService {
         let i = this.itemForUserR.indexOf(fav);
         this.FavorateR.splice(index, 1);
         this.itemForUserR.splice(i, 1);
+
         localStorage.setItem('FavorateR', JSON.stringify(this.FavorateR));
+        this.showTostererror('item removed form Favorate ');
 
         return;
       }
@@ -49,6 +57,8 @@ export class UserDataService {
       type: recipe,
       type_name: 'Recipe',
     });
+    this.showTostersuccess('Adedd to Favorate');
+
     localStorage.setItem('FavorateR', JSON.stringify(this.FavorateR));
   }
   addFavorateC(coctail: Cocktail) {
@@ -61,6 +71,7 @@ export class UserDataService {
         this.FavorateC.splice(index, 1);
         this.itemForUser.splice(ind, 1);
         localStorage.setItem('FavorateC', JSON.stringify(this.FavorateC));
+        this.showTostererror("item removed form Favorate ");
 
         return;
       }
@@ -72,6 +83,7 @@ export class UserDataService {
       type: coctail,
       type_name: 'Cocktail',
     });
+    this.showTostersuccess("Adedd to Favorate");
 
     localStorage.setItem('FavorateC', JSON.stringify(this.FavorateC));
   }
@@ -95,10 +107,10 @@ export class UserDataService {
     }
     return of(this.itemForUser);
   }
-  addSugeest() {}
-  getSugeest() {}
-  addRicepe() {}
-  addCocktail() {}
-  getUserRecipe() {}
-  getUserCocktail() {}
+  addSugeest() { }
+  getSugeest() { }
+  addRicepe() { }
+  addCocktail() { }
+  getUserRecipe() { }
+  getUserCocktail() { }
 }

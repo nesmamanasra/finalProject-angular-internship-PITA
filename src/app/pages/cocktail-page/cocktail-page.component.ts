@@ -12,8 +12,8 @@ export class CocktailPageComponent implements OnInit {
   recipes?: Recipe[];
   cocktail?: Cocktail[];
   Imge: any;
-  searshcocktail?:string = "Cocktail"
-  cocktailName?:string
+  searshcocktail?: string = 'Cocktail';
+  cocktailName?: string;
   constructor(private ApiFood: ApiService) {
     ApiFood.getImge('cocktail').subscribe(
       (params) => {
@@ -28,15 +28,13 @@ export class CocktailPageComponent implements OnInit {
     this.ApiFood.getCocktailByName('apple').subscribe(
       (params) => {
         this.cocktail = params as Cocktail[];
-        for (let i =0; i <= this.cocktail.length;i++) {
-         this.cocktail[i] ={
-          name:this.cocktail[i].name,
-          ingredients :this.cocktail[i].ingredients,
-          instructions  : this.cocktail[i].instructions,
-          image : this.Imge.results[i].urls.small_s3,
-
-         };
-
+        for (let i = 0; i <= this.cocktail.length; i++) {
+          this.cocktail[i] = {
+            name: this.cocktail[i].name,
+            ingredients: this.cocktail[i].ingredients,
+            instructions: this.cocktail[i].instructions,
+            image: this.Imge.results[i].urls.small_s3,
+          };
         }
       },
       (error) => {
@@ -47,8 +45,8 @@ export class CocktailPageComponent implements OnInit {
   }
 
   searsh(recipeName: any) {
-    this.searshcocktail =this.cocktailName;
-   this.ApiFood.getImge(recipeName.recipeName.value+" cocktail").subscribe(
+    this.searshcocktail = this.cocktailName;
+    this.ApiFood.getImge(recipeName.recipeName.value + ' cocktail').subscribe(
       (params) => {
         console.log(params, 'this is imge ');
         this.Imge = params;
@@ -62,15 +60,13 @@ export class CocktailPageComponent implements OnInit {
       (params) => {
         this.cocktail = params as Cocktail[];
         console.log(this.cocktail, 'this is test ');
-        for (let i =0; i <= this.cocktail.length;i++) {
-         this.cocktail[i] ={
-          name:this.cocktail[i].name,
-          ingredients :this.cocktail[i].ingredients,
-          instructions  : this.cocktail[i].instructions,
-          image : this.Imge.results[i].urls.small_s3,
-
-         };
-
+        for (let i = 0; i <= this.cocktail.length; i++) {
+          this.cocktail[i] = {
+            name: this.cocktail[i].name,
+            ingredients: this.cocktail[i].ingredients,
+            instructions: this.cocktail[i].instructions,
+            image: this.Imge.results[i].urls.small_s3,
+          };
         }
       },
       (error) => {
@@ -78,6 +74,6 @@ export class CocktailPageComponent implements OnInit {
         return null;
       }
     );
-    this.cocktailName =''
+    this.cocktailName = '';
   }
 }

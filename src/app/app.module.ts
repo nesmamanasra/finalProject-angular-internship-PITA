@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -32,6 +31,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { CocktailDetailsComponent } from './pages/cocktail-details/cocktail-details.component';
+import {ToastNoAnimation, ToastNoAnimationModule, ToastrModule} from 'ngx-toastr'
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 @NgModule({
   declarations: [
@@ -69,7 +69,11 @@ import { NotFoundComponent } from './pages/not-found/not-found.component'
     FormsModule,
     ReactiveFormsModule,
     MatTooltipModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+   }),
+    ToastNoAnimationModule.forRoot(),
 
   ],
 

@@ -1,5 +1,5 @@
 .footer-up:hover {
-  background:var(--green);
+  background: var(--green);
   color: #fff;
 }
 
@@ -9,6 +9,6 @@
 .footer-up .text-reset i:hover {
   transform: scale(2);
 }
-footer{
+footer {
   display: block;
 }

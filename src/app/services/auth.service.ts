@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { User } from './../models/User';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -9,7 +10,7 @@ export class AuthService {
   loginStat:boolean = false;
   static user = '';
 
-  constructor() {
+  constructor(public toast:ToastrService) {
     AuthService.user = JSON.parse( localStorage.getItem("userActive") as string)||[];
 
   }
@@ -23,11 +24,18 @@ export class AuthService {
         localStorage.setItem("userActive",JSON.stringify(user));
 
         AuthService.user = user;
+        this.toast.success(`${user.fname}  ${user.lname}`,"Welcome",{
+          timeOut: 2000,
+          positionClass: 'toast-custom',
+       })
           return user;
       }
     }
 
-      alert("email Or pasword have error");
+    this.toast.error("User name or password have error","",{
+      timeOut: 2000,
+      positionClass: 'toast-custom',
+   })
       return null;
 
   }
@@ -66,5 +74,9 @@ export class AuthService {
     return  this.loginStat = false
    }
 
+}
+getAllUser(){
+  let users:User[] =JSON.parse( localStorage.getItem("Users") as string)||[];
+return users
 }
 }

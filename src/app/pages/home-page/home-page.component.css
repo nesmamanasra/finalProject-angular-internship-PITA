@@ -9,7 +9,6 @@
   color: var(--black);
   padding: 10px 0;
   line-height: 1;
-
 }
 .swiper-slide-string span {
   font-size: 35px;
@@ -78,7 +77,6 @@
   }
   .swiper-slide-string h3 {
     font-size: 40px;
-
   }
   .swiper-slide-string span {
     font-size: 30px;
@@ -86,7 +84,7 @@
   .swiper-slide-string p {
     font-size: 15px;
   }
-  .about-content{
+  .about-content {
     flex-wrap: wrap;
   }
 }
@@ -150,60 +148,54 @@
 .user-star .user-name {
   font-weight: bolder;
 }
-.about-content{
+.about-content {
   display: flex;
   /* flex-wrap: wrap; */
   gap: 1.5rem;
   align-items: center;
   padding: 20px;
 }
-.about-content .aboute-text{
+.about-content .aboute-text {
   flex: 1 1 45rem;
   padding: 10px;
   line-height: 2;
-
 }
-.about-content .aboute-text h1{
+.about-content .aboute-text h1 {
   color: var(--black);
   font-weight: bolder;
-
 }
-.about-content .aboute-text p{
+.about-content .aboute-text p {
 }
 
-.about-content .image{
+.about-content .image {
   flex: 1 1 45rem;
-
 }
-.about-content .image img{
+.about-content .image img {
   width: 100%;
-
 }
-.about-icons{
+.about-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   /* margin-top: 20px; */
   padding: 30px 0;
 }
-.about-icons .icons{
+.about-icons .icons {
   padding: 10px 37px;
   background-color: #eee;
   border-radius: 7px;
-  border:  1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   flex: 1 1 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.about-icons .icons i{
+.about-icons .icons i {
   color: var(--green);
   font-size: 20px;
 }
-.about-icons .icons span{
+.about-icons .icons span {
   color: var(--black);
   margin-left: 2px;
   font-size: 15px;
-
 }

@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,600;0,700;0,800;1,400&display=swap");
 * {
   margin: 0;
@@ -25,3 +26,53 @@ html {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~ngx-toastr/toastr.css';
+
+.toast-custom {
+
+  top: 80px;
+
+  right: 0px;
+
+  }
+
+.toast-bootstrap-compatibility-fix {
+  opacity:1;
+}
+#toast-container{
+  position: fixed;
+  top: 80px;
+  right: 5px;
+  z-index: 11010101;
+}
+#toast-container > div {
+  opacity: 0.8;
+  font-family: cursive !important;
+  font-weight: bold;
+  font-size: 2vmin;
+  margin:20px auto;
+  padding:20px 40px;
+  border-radius:5px;
+  box-shadow:0 0 5px 1px rgb(248, 201, 201);
+  color: #fff;
+}
+.toast {
+  font-size: initial !important;
+  border: initial !important;
+  font-family: cursive;
+
+  /* backdrop-filter: blur(0) !important; */
+}
+.toast-success {
+  background-color: var(--green) !important;
+}
+.toast-error {
+  background-color: orangered !important;
+}
+.toast-info {
+  background-color: #2F96B4 !important;
+}
+.toast-warning {
+  background-color: #F89406 !important;
+}

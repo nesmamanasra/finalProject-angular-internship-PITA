@@ -5,7 +5,7 @@
     </section>
   </div>
   <div class="right">
-    <form [formGroup]="registerForm" action=""  (ngSubmit)="creatUser()">
+    <form [formGroup]="registerForm" action="" (ngSubmit)="creatUser()">
       <section class="copy">
         <div class="register">
           <p>
@@ -28,44 +28,45 @@
       </div>
       <div class="input-section-password">
         <label for="password"> Password</label>
-        <input  type="password" id="password" name="password"  placeholder="Password" formControlName="password" >
+        <input type="password" id="password" name="password" placeholder="Password" formControlName="password">
       </div>
       <div class="input-section-CoPassword">
         <label for="img"> Image URL </label>
-        <input   type="text" id="img" name="img" placeholder=" Image URL" formControlName="imgUrl">
+        <input type="text" id="img" name="img" placeholder=" Image URL" formControlName="imgUrl">
       </div>
       <div class="input-section-address">
         <label for="address"> Address </label>
         <input type="text" id="address" name="address" placeholder="address" formControlName="addres">
       </div>
       <div class="d-flex justify-content-between">
-      <div class="input-section-age">
-        <label for="age"> Your Age </label>
-        <input type="number" id="age" name="age" placeholder="Age" formControlName="age">
+        <div class="input-section-age">
+          <label for="age"> Your Age </label>
+          <input type="number" id="age" name="age" placeholder="Age" formControlName="age">
+        </div>
+
+        <div class="input-section-gender">
+          <label for="gender"> Gender </label>
+          <select name="gender" id="gender" class="" [(ngModel)]="g" formControlName="gender">
+            <option disabled selected>Gender</option>
+            <option [ngValue]="gg" *ngFor="let gg of gender">{{gg}}</option>
+          </select>
+        </div>
       </div>
 
-      <div class="input-section-gender">
-        <label for="gender"> Gender </label>
-        <select name="gender" id="gender"  class="" [(ngModel)]="g" formControlName="gender">
-          <option  disabled selected>Gender</option>
-          <option [ngValue]="gg" *ngFor="let gg of gender">{{gg}}</option>
-        </select>
-      </div>
-    </div>
+      <button class="reg-btn">Submit</button>
+      <p class="  text-warning m-3" *ngIf="registerForm.get('fname')?.invalid && registerForm.get('fname')?.touched">
+        {{
+        registerForm.get('fname')?.errors?.['required'] ? 'First Name is required' : ''
+        }}
 
-          <button class="reg-btn">Submit</button>
-          <p class="  text-warning m-3" *ngIf="registerForm.get('fname')?.invalid && registerForm.get('fname')?.touched">
-            {{
-              registerForm.get('fname')?.errors?.['required'] ? 'First Name is required' : ''
-            }}
+      </p>
+      <p class="  text-warning m-3"
+        *ngIf="registerForm.get('lname')?.invalid && registerForm.get('lname')?.touched && registerForm.get('fname')?.valid ">
+        {{
+        registerForm.get('lname')?.errors?.['required'] ? 'Last Name is required' : ''
+        }}
 
-          </p>
-          <p class="  text-warning m-3" *ngIf="registerForm.get('lname')?.invalid && registerForm.get('lname')?.touched && registerForm.get('fname')?.valid ">
-            {{
-              registerForm.get('lname')?.errors?.['required'] ? 'Last Name is required' : ''
-            }}
-
-          </p>
+      </p>
 
 
 

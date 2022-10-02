@@ -1,69 +1,61 @@
-.about-content{
+.about-content {
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 1.5rem;
   align-items: center;
   padding: 20px;
 }
-.about-section{
+.about-section {
   margin-top: 130px;
 }
-.about-content .aboute-text{
+.about-content .aboute-text {
   flex: 1 1 45rem;
   padding: 10px;
   line-height: 2;
-
 }
-.about-content .aboute-text h1{
+.about-content .aboute-text h1 {
   color: var(--black);
   font-weight: bolder;
-
 }
 
-
-.about-content .image{
+.about-content .image {
   flex: 1 1 45rem;
   width: 400px;
   height: 400px;
-
 }
-.about-content .image img{
+.about-content .image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
-.about-icons{
+.about-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   /* margin-top: 20px; */
   padding: 30px 0;
 }
-.about-icons .icons{
+.about-icons .icons {
   padding: 10px 37px;
   background-color: #eee;
   border-radius: 7px;
-  border:  1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   flex: 1 1 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.about-icons .icons i{
+.about-icons .icons i {
   color: var(--green);
   font-size: 20px;
 }
-.about-icons .icons span{
+.about-icons .icons span {
   color: var(--black);
   margin-left: 2px;
   font-size: 15px;
-
 }
 @media (max-width: 991px) {
-
-  .about-content{
+  .about-content {
     flex-wrap: wrap;
   }
 }
@@ -82,25 +74,27 @@ label {
   align-items: center;
   justify-content: center;
 }
-input,textarea {
+input,
+textarea {
   border-radius: 10px;
   border: 1px solid;
 }
-input:focus,textarea:focus {
+input:focus,
+textarea:focus {
   border: 3px solid rgba(255, 255, 255, 0.3) !important;
 }
-.item-rating{
-font-size: 30px;
-color: gold;
-background-color: #fff;
+.item-rating {
+  font-size: 30px;
+  color: gold;
+  background-color: #fff;
 }
-.detail-buttons .delete-btn,.share-btn{
+.detail-buttons .delete-btn,
+.share-btn {
   padding: 0px 35px;
   font-size: 20px;
   margin: 1px;
   transition: 1s all;
   color: #fff;
-
 }
 .sub-heading {
   text-align: center;
@@ -117,14 +111,14 @@ background-color: #fff;
   text-transform: uppercase;
   font-weight: 600;
 }
-.delete-btn:hover,.share-btn:hover{
+.delete-btn:hover,
+.share-btn:hover {
   letter-spacing: 2px;
 }
-.delete-btn
-{
+.delete-btn {
   background-color: #ff4a00;
 }
 
-.share-btn{
+.share-btn {
   background-color: var(--green);
 }
