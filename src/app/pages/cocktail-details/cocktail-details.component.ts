@@ -4,6 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
 import { CardDataService } from 'src/app/services/card-data.service';
 import { Comment } from '../../models/Comment';
+import { MatDialog } from '@angular/material/dialog';
+import { ShareDialogComponent } from 'src/app/components/share-dialog/share-dialog.component';
+import { ShareCocktailDialogComponent } from 'src/app/components/share-cocktail-dialog/share-cocktail-dialog.component';
 
 @Component({
   selector: 'app-cocktail-details',
@@ -23,7 +26,9 @@ export class CocktailDetailsComponent implements OnInit {
   constructor(
     router: Router,
     public activeRouter: ActivatedRoute,
-    public cdetser: CardDataService
+    public cdetser: CardDataService,
+    public dialog: MatDialog
+
   ) {
     this.cocktail = JSON.parse(
       JSON.parse(
@@ -45,5 +50,10 @@ export class CocktailDetailsComponent implements OnInit {
   addComment() {
     this.cdetser.addCommit(this.comment, this.cocktail);
     this.comment = '';
+  }
+  openDialog() {
+    this.dialog.open(ShareCocktailDialogComponent, {
+      data: this.cocktail,
+    });
   }
 }

@@ -3,7 +3,7 @@ export interface ShareR{
   id: number,
   user_id: number,
   type: "Recipe",
-  cocktail: Recipe,
+  shareRecipe: Recipe,
   sharedUserId: number;
 
 }

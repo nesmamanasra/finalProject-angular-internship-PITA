@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,7 +19,8 @@ export class RegisterPageComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     public auths: AuthService,
-    public route: Router
+    public route: Router,
+    public toast:ToastrService
   ) {
     this.registerForm = this.fb.group({
       fname: [, Validators.required],
@@ -59,7 +61,10 @@ export class RegisterPageComponent implements OnInit {
       this.route.navigate(['login']);
     } else {
       this.errorMessage = this.registerForm.getError('fname');
-      alert('Plese Check data');
+      this.toast.warning(`plese Check Your Data `,"",{
+        timeOut: 2000,
+        positionClass: 'toast-custom',
+     })
     }
   }
 }

@@ -1,12 +1,36 @@
 <div class="content ">
+  <div class="search">
+    <form class="btn-group " role="group">
+
+
+      <button type="radio" class="btn" name="filter" (click)="filter('all')" id="btnradio1"> All</button>
+      <button type="radio" class="btn" name="filter" (click)="filter('recipe')" id="btnradio1"> Recipe</button>
+      <button type="radio" class="btn" name="filter" (click)="filter('cocktail')" id="btnradio1"> Cocktail</button>
+
+    </form>
+
+  </div>
   <div>
-    <h3 class="sub-heading">Sugesst </h3>
+    <h3 class="sub-heading">{{typesugesst}}  Sugesst </h3>
   </div>
   <div class="content-items container">
 
-    <div *ngFor="let i of items">
-      <app-item-card></app-item-card>
 
+
+    <div *ngFor="let i of sugesstR">
+      <app-item-card [recipe]="i.shareRecipe"></app-item-card>
+
+    </div>
+    <div *ngFor="let i of sugesstC">
+      <app-coctail-card [coctail]="i.shareCocktail"></app-coctail-card>
+
+    </div>
+    <div class="spanner" *ngIf="!sugesstR?.length && !sugesstC?.length">
+
+      <div>
+        <img src="../../../assets/img/dish-spinner-removebg-preview.png" alt="">
+        <span>no body share items with you</span>
+      </div>
     </div>
   </div>
 

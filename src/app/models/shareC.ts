@@ -3,7 +3,7 @@ export interface ShareC{
   id: number,
   user_id: number,
   type: "Cocktail",
-  cocktail: Cocktail,
+  shareCocktail: Cocktail,
   sharedUserId: number;
 
 }

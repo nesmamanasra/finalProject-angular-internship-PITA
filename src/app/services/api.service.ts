@@ -12,7 +12,9 @@ export class ApiService {
 
 
   getRecipeByName(recipeName:string){
-    const headers = new HttpHeaders().append('X-Api-Key' , 'zSZdKrKWJarNI9n9I8M/qg==6kuTBz3ju4MKRf1z')
+    // const headers = new HttpHeaders().append('X-Api-Key' , 'zSZdKrKWJarNI9n9I8M/qg==6kuTBz3ju4MKRf1z')
+
+    const headers = new HttpHeaders().append('X-Api-Key' , 'CIckCSgByIWKRq1fhZGTAg==yFTKTPQRlEUONEQc')
    return  this.http.get(`https://api.api-ninjas.com/v1/recipe?query=${recipeName} `,{
       headers ,
     });
