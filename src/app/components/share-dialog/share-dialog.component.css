@@ -1,0 +1,15 @@
+.dialog-page{
+  width: 100%;
+}
+.list-group{
+  width: 50vmin;
+}
+.list-group-item:hover{
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
+  margin: 3px;
+}
+h3{
+  background-color: #fff;
+  font-family:monospace;
+}
