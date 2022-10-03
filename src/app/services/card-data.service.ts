@@ -37,7 +37,7 @@ export class CardDataService {
       user_id: 't' + Math.random(),
       comment: comment,
       userImage: user.imgUrl,
-      rating: 2,
+      rating: this.getRating(rec),
       userName: user.fname + ' ' + user.lname,
       type_name: 'Comment',
     });
