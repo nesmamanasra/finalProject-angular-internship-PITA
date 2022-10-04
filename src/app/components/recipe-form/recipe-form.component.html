@@ -1,0 +1,62 @@
+<div class="recipe-form">
+  <form [formGroup]="recipeForm" (ngSubmit)="creatRecipe()">
+    <div class="mb-3">
+      <label for="title" class="form-label">title</label>
+      <input formControlName="title" type="text" class="form-control" id="title" aria-describedby="emailHelp">
+      <p *ngIf="recipeForm.get('title')?.invalid && recipeForm.get('title')?.touched">
+        *{{
+          recipeForm.get('title')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+
+        {{
+          recipeForm.get('title')?.errors?.['maxlength'] ? 'max length should be 15' : ''
+        }}
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="ingredients" class="form-label">ingredients</label>
+      <input formControlName="ingredients" type="text" class="form-control" id="ingredients">
+      <p *ngIf="recipeForm.get('ingredients')?.invalid && recipeForm.get('ingredients')?.touched">
+        *{{
+          recipeForm.get('ingredients')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="instructions" class="form-label">instructions</label>
+      <input formControlName="instructions" type="text" class="form-control" id="instructions">
+      <p *ngIf="recipeForm.get('instructions')?.invalid && recipeForm.get('instructions')?.touched">
+        *{{
+          recipeForm.get('instructions')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="servings" class="form-label">servings</label>
+      <input formControlName="servings" type="text" class="form-control" id="servings">
+      <p *ngIf="recipeForm.get('servings')?.invalid && recipeForm.get('servings')?.touched">
+        *{{
+          recipeForm.get('servings')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+
+        {{
+          recipeForm.get('servings')?.errors?.['maxlength'] ? 'max length should be 15' : ''
+        }}
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="imageUrl" class="form-label">image Url</label>
+      <input formControlName="imageUrl" type="text" class="form-control" id="imageUrl">
+      <p *ngIf="recipeForm.get('imageUrl')?.invalid && recipeForm.get('imageUrl')?.touched">
+        *{{
+          recipeForm.get('imageUrl')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+      </p>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset"  class="btn btn-danger ms-2" (click)="close()">Close</button>
+
+  </form>
+
+</div>
+
