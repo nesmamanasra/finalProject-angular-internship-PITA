@@ -38,6 +38,8 @@ import { ShareDialogComponent } from './components/share-dialog/share-dialog.com
 import { ShareCocktailDialogComponent } from './components/share-cocktail-dialog/share-cocktail-dialog.component';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 import { UserRecipeComponent } from './components/user-recipe/user-recipe.component';
+import { CocktailFormComponent } from './components/cocktail-form/cocktail-form.component';
+import { UserCocktailComponent } from './components/user-cocktail/user-cocktail.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { UserRecipeComponent } from './components/user-recipe/user-recipe.compon
     ShareDialogComponent,
     ShareCocktailDialogComponent,
     RecipeFormComponent,
-    UserRecipeComponent
+    UserRecipeComponent,
+    CocktailFormComponent,
+    UserCocktailComponent
   ],
   imports: [
     BrowserModule,

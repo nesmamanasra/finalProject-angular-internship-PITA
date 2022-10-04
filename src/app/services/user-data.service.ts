@@ -26,7 +26,8 @@ export class UserDataService {
     JSON.parse(localStorage.getItem('FavorateR') as string) || [];
   userRecipe: UserRecipe[] =
     JSON.parse(localStorage.getItem('userRecipe') as string) || [];
-
+    userCocktail: UserCocktail[] =
+    JSON.parse(localStorage.getItem('userCocktail') as string) || [];
   constructor(public auths: AuthService, private toast: ToastrService) {
     this.getFavorateC().subscribe((params) => {
       this.itemForUser = params;
@@ -37,6 +38,9 @@ export class UserDataService {
     this.getUserRecipe().subscribe((params) => {
       this.userCreatedRecipe = params;
     });
+    this.getUserCocktail().subscribe((params) => {
+      this.userCreatedCocktail = params
+        })
   }
   showTostersuccess(massege: string) {
     this.toast.success(massege);
@@ -250,6 +254,49 @@ export class UserDataService {
     return ;
   }
 
-  addCocktail() {}
-  getUserCocktail() {}
+  addCocktail(cocktail:Cocktail) {
+    const userActiv: User = this.auths.userActive();
+
+    this.userCocktail.push({
+      id: Math.random(),
+      userId: userActiv.userId,
+      type: cocktail,
+    });
+    this.userCreatedCocktail.push({
+      id: Math.random(),
+      userId: userActiv.userId,
+      type: cocktail,
+    });
+
+    localStorage.setItem('userCocktail', JSON.stringify(this.userCocktail));
+  }
+  getUserCocktail():Observable<any> {
+    const user: User = this.auths.userActive();
+    this.userCreatedCocktail.splice(0);
+    for (const i of this.userCocktail) {
+      if (i.userId == user.userId) {
+        this.userCreatedCocktail.push(i);
+      }
+    }
+    return of(this.userCreatedCocktail);
+  }
+
+
+  deleteCocktail(cocktail: UserCocktail) {
+    for (const item of this.userCocktail) {
+      if(item.id ==cocktail.id){
+        let index = this.userCocktail.indexOf(item);
+        let i = this.userCreatedCocktail.indexOf(item);
+        this.userCocktail.splice(index, 1);
+        this.userCreatedCocktail.splice(i, 1);
+        this.showTostererror("Deleted Successfully");
+        localStorage.setItem('userCocktail', JSON.stringify(this.userCocktail));
+
+        return
+      }
+
+    }
+    return ;
+  }
+
 }

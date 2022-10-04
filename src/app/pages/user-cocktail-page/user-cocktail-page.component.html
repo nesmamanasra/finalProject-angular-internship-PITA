@@ -1,14 +1,8 @@
 <div class="choice-form container">
   <div class="select-form">
-    <form action="" class="">
-      <select class="" aria-label="Default select example">
-        <option value="3" selected>All Cocktail</option>
-        <option value="1">Your Coctail</option>
-        <option value="2">Defult</option>
-      </select>
-    </form>
+
     <div class="add-btn">
-      <a href="">Add Coctail</a>
+      <a (click)="openDialog()">Add Coctail</a>
     </div>
   </div>
 </div>
@@ -17,10 +11,16 @@
     <h3 class="sub-heading">Your cocktail </h3>
   </div>
   <div class="content-items container">
+    <div *ngFor="let i of userCocktail">
+      <app-user-cocktail [cocktail]="i"></app-user-cocktail>
 
-    <div *ngFor="let i of items">
-      <app-item-card></app-item-card>
+    </div>
+    <div class="spanner" *ngIf="!userCocktail?.length">
 
+      <div>
+        <img src="../../../assets/img/pexels-ttr.png" alt="">
+        <span>Add some cocktail to see it here </span>
+      </div>
     </div>
   </div>
 

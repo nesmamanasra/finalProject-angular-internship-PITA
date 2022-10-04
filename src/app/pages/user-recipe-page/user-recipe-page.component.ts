@@ -10,7 +10,6 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-recipe-page.component.css'],
 })
 export class UserRecipePageComponent implements OnInit {
-  items? = [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2];
   userRecipe?: UserRecipe[];
   constructor(public dialog: MatDialog, public userservice: UserDataService) {
     userservice.getUserRecipe().subscribe((params) => {
