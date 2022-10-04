@@ -36,6 +36,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
 import { ShareCocktailDialogComponent } from './components/share-cocktail-dialog/share-cocktail-dialog.component';
+import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
+import { UserRecipeComponent } from './components/user-recipe/user-recipe.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { ShareCocktailDialogComponent } from './components/share-cocktail-dialog
     CocktailDetailsComponent,
     NotFoundComponent,
     ShareDialogComponent,
-    ShareCocktailDialogComponent
+    ShareCocktailDialogComponent,
+    RecipeFormComponent,
+    UserRecipeComponent
   ],
   imports: [
     BrowserModule,

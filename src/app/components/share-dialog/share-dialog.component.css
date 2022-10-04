@@ -13,3 +13,40 @@ h3{
   background-color: #fff;
   font-family:monospace;
 }
+.spanner {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spanner div {
+  height: 30vmin;
+  width: 40vmin;
+  text-align: center;
+}
+.spanner div span {
+  font-size: 3vmin;
+  font-family: cursive;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.spanner div img {
+  width: 50%;
+  animation: spinn 5s infinite;
+  animation-duration: 3s;
+  object-fit: contain;
+  object-position: center;
+}
+@keyframes spinn {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  /* 100% {
+    transform: translateY(10px);
+  } */
+}

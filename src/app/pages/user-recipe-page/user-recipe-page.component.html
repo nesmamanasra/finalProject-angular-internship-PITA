@@ -1,14 +1,8 @@
 <div class="choice-form container">
   <div class="select-form">
-    <form action="" class="">
-      <select class="" aria-label="Default select example">
-        <option value="3" selected>All Recipes</option>
-        <option value="1">Your Recipes</option>
-        <option value="2">Defult</option>
-      </select>
-    </form>
+
     <div class="add-btn">
-      <a href="">Add Recipes</a>
+      <a (click)="openDialog()">Add Recipes</a>
     </div>
   </div>
 </div>
@@ -18,9 +12,17 @@
   </div>
   <div class="content-items container">
 
-    <div *ngFor="let i of items">
-      <app-item-card></app-item-card>
+    <div *ngFor="let i of userRecipe">
+      <app-user-recipe [recipees]="i"></app-user-recipe>
 
+    </div>
+
+    <div class="spanner" *ngIf="!userRecipe?.length">
+
+      <div>
+        <img src="../../../assets/img/dish-spinner-removebg-preview.png" alt="">
+        <span>Add some recipe to see it here </span>
+      </div>
     </div>
   </div>
 

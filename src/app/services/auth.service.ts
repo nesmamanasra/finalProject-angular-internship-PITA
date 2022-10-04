@@ -25,7 +25,7 @@ export class AuthService {
 
         AuthService.user = user;
         this.toast.success(`${user.fname}  ${user.lname}`, 'Welcome', {
-          timeOut: 2000,
+          timeOut: 3000,
           positionClass: 'toast-custom',
         });
         return user;
@@ -33,7 +33,7 @@ export class AuthService {
     }
 
     this.toast.error('User name or password have error', '', {
-      timeOut: 2000,
+      timeOut: 3000,
       positionClass: 'toast-custom',
     });
     return null;
@@ -59,7 +59,7 @@ export class AuthService {
       `${newUser.fname}  ${newUser.lname} `,
       'Welcom Plese login',
       {
-        timeOut: 2000,
+        timeOut: 3000,
         positionClass: 'toast-custom',
       }
     );

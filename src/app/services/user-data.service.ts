@@ -1,3 +1,5 @@
+import { UserCocktail } from './../models/UserCocktail';
+import { UserRecipe } from './../models/UserRecipe';
 import { ShareC } from './../models/shareC';
 import { ShareR } from './../models/shareR';
 import { Observable, of } from 'rxjs';
@@ -9,22 +11,31 @@ import { User } from './../models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { TitleStrategy } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class UserDataService {
   itemForUser: FavoriteC[] = [];
   itemForUserR: FavoriteR[] = [];
+  userCreatedRecipe: UserRecipe[] = [];
+  userCreatedCocktail: UserCocktail[] = [];
   FavorateC: FavoriteC[] =
     JSON.parse(localStorage.getItem('FavorateC') as string) || [];
   FavorateR: FavoriteR[] =
     JSON.parse(localStorage.getItem('FavorateR') as string) || [];
+  userRecipe: UserRecipe[] =
+    JSON.parse(localStorage.getItem('userRecipe') as string) || [];
+
   constructor(public auths: AuthService, private toast: ToastrService) {
     this.getFavorateC().subscribe((params) => {
       this.itemForUser = params;
     });
     this.getFavorateR().subscribe((params) => {
       this.itemForUserR = params;
+    });
+    this.getUserRecipe().subscribe((params) => {
+      this.userCreatedRecipe = params;
     });
   }
   showTostersuccess(massege: string) {
@@ -110,23 +121,24 @@ export class UserDataService {
     return of(this.itemForUser);
   }
   addShareR(user: User, recipe: Recipe) {
-
     console.log(user, recipe);
     const userActiv: User = this.auths.userActive();
-   let usershareRec:ShareR[] =[];
-   this.getShareR(user).subscribe((params) => {
-    usershareRec=params
-   });
+    let usershareRec: ShareR[] = [];
+    this.getShareR(user).subscribe((params) => {
+      usershareRec = params;
+    });
     const ShareRArray: ShareR[] =
       JSON.parse(localStorage.getItem('ShareR') as string) || [];
     for (let share of ShareRArray) {
       for (const item of usershareRec) {
-        if (share.sharedUserId == user.userId &&recipe.instructions ==item.shareRecipe.instructions) {
+        if (
+          share.sharedUserId == user.userId &&
+          recipe.instructions == item.shareRecipe.instructions
+        ) {
           this.showTostererror(' This item Shared with User  ');
           return;
         }
       }
-
     }
     ShareRArray.push({
       id: Math.random(),
@@ -140,51 +152,48 @@ export class UserDataService {
 
     return;
   }
-  getShareR(user:User):Observable<ShareR[]> {
-
+  getShareR(user: User): Observable<ShareR[]> {
     let shareUser: ShareR[] = [];
     const ShareRArray: ShareR[] =
       JSON.parse(localStorage.getItem('ShareR') as string) || [];
     for (const item of ShareRArray) {
-      if (item.sharedUserId ==user.userId &&item.type == "Recipe") {
-        shareUser.push(item)
-
+      if (item.sharedUserId == user.userId && item.type == 'Recipe') {
+        shareUser.push(item);
       }
     }
     return of(shareUser);
   }
 
-  getShareC(user:User):Observable<ShareC[]> {
-
+  getShareC(user: User): Observable<ShareC[]> {
     let shareUser: ShareC[] = [];
     const ShareRArray: ShareC[] =
       JSON.parse(localStorage.getItem('ShareC') as string) || [];
     for (const item of ShareRArray) {
-      if (item.sharedUserId ==user.userId && item.type == "Cocktail") {
-        shareUser.push(item)
-
+      if (item.sharedUserId == user.userId && item.type == 'Cocktail') {
+        shareUser.push(item);
       }
     }
     return of(shareUser);
   }
   addShareC(user: User, coctail: Cocktail) {
-
     console.log(user, coctail);
     const userActiv: User = this.auths.userActive();
-   let usershareRec:ShareC[] =[];
+    let usershareRec: ShareC[] = [];
     this.getShareC(user).subscribe((params) => {
-      usershareRec=params;
-   });
+      usershareRec = params;
+    });
     const ShareRArray: ShareC[] =
       JSON.parse(localStorage.getItem('ShareC') as string) || [];
     for (let share of ShareRArray) {
       for (const item of usershareRec) {
-        if (share.sharedUserId == user.userId &&coctail.instructions ==item.shareCocktail.instructions) {
+        if (
+          share.sharedUserId == user.userId &&
+          coctail.instructions == item.shareCocktail.instructions
+        ) {
           this.showTostererror(' This item Shared with User  ');
           return;
         }
       }
-
     }
     ShareRArray.push({
       id: Math.random(),
@@ -198,8 +207,49 @@ export class UserDataService {
 
     return;
   }
-  addRicepe() {}
+  addRicepe(recipe: Recipe) {
+    const userActiv: User = this.auths.userActive();
+
+    this.userRecipe.push({
+      id: Math.random(),
+      userId: userActiv.userId,
+      type: recipe,
+    });
+    this.userCreatedRecipe.push({
+      id: Math.random(),
+      userId: userActiv.userId,
+      type: recipe,
+    });
+
+    localStorage.setItem('userRecipe', JSON.stringify(this.userRecipe));
+  }
+  getUserRecipe(): Observable<any> {
+    const user: User = this.auths.userActive();
+    this.userCreatedRecipe.splice(0);
+    for (const i of this.userRecipe) {
+      if (i.userId == user.userId) {
+        this.userCreatedRecipe.push(i);
+      }
+    }
+    return of(this.userCreatedRecipe);
+  }
+  deleteRecipe(recipe: UserRecipe) {
+    for (const item of this.userRecipe) {
+      if(item.id ==recipe.id){
+        let index = this.userRecipe.indexOf(item);
+        let i = this.userCreatedRecipe.indexOf(item);
+        this.userRecipe.splice(index, 1);
+        this.userCreatedRecipe.splice(i, 1);
+        this.showTostererror("Deleted Successfully");
+        localStorage.setItem('userRecipe', JSON.stringify(this.userRecipe));
+
+        return
+      }
+
+    }
+    return ;
+  }
+
   addCocktail() {}
-  getUserRecipe() {}
   getUserCocktail() {}
 }
