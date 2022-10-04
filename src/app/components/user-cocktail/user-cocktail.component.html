@@ -1,0 +1,18 @@
+<div class="box">
+  <div>
+    <a (click)=" deleteCocktail()"><i class="fa-solid fa-xmark"></i></a>
+    <a (click)="favorate()"><i class="fa-solid fa-heart" [ngClass]="cardser.isfavorate(cocktail?.type) ? 'fav' : ''"></i></a>
+  </div>
+  <div class="image">
+    <img [src]="cocktail?.type?.image" onerror=" this.src ='../../../assets/img/default-recipe-image.gif'" alt="">
+  </div>
+  <div class="box-content">
+    <p class="title">{{cocktail?.type?.name}} </p>
+  </div>
+  <div class="box-btn">
+    <!-- <span class="servings">{{recipees?.type?.servings}}</span> -->
+    <a class="btn" (click)="navigateToCocktailDetails(cocktail?.type)"> Details</a>
+
+  </div>
+</div>
+

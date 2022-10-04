@@ -1,0 +1,58 @@
+<div class="recipe-form">
+  <form [formGroup]="cocktailForm" (ngSubmit)="creatCocktail()">
+    <div class="mb-3">
+      <label for="title" class="form-label">name</label>
+      <input formControlName="name" type="text" class="form-control" id="title" aria-describedby="emailHelp">
+      <p *ngIf="cocktailForm.get('name')?.invalid && cocktailForm.get('name')?.touched">
+        *{{
+        cocktailForm.get('name')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+
+        {{
+        cocktailForm.get('name')?.errors?.['maxlength'] ? 'max length should be 15' : ''
+        }}
+      </p>
+    </div>
+    <div class="mb-3">
+
+      <label for="ingredients" class="form-label">ingredients</label>
+      <a (click)="addNewIngredient()" style="padding: 7px 12px" aria-placeholder=""> <i class="fa fa-plus"
+          aria-hidden="true"></i></a>
+      <div class="ingredients" *ngFor="let itemGroup of getIngredientsArray()">
+        <div [formGroup]="itemGroup">
+          <input formControlName="ingredientItem" type="text" class="form-control" id="ingredients">
+
+        </div>
+
+      </div>
+      <p *ngIf="cocktailForm.get('ingredients')?.invalid && cocktailForm.get('ingredients')?.touched">
+        *{{
+        cocktailForm.get('ingredients')?.errors?.['required'] ? 'this felid is required' : 'Entar  value'
+        }}
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="instructions" class="form-label">instructions</label>
+      <input formControlName="instructions" type="text" class="form-control" id="instructions">
+      <p *ngIf="cocktailForm.get('instructions')?.invalid && cocktailForm.get('instructions')?.touched">
+        *{{
+        cocktailForm.get('instructions')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+      </p>
+    </div>
+
+    <div class="mb-3">
+      <label for="imageUrl" class="form-label">image Url</label>
+      <input formControlName="imageUrl" type="text" class="form-control" id="imageUrl">
+      <p *ngIf="cocktailForm.get('imageUrl')?.invalid && cocktailForm.get('imageUrl')?.touched">
+        *{{
+        cocktailForm.get('imageUrl')?.errors?.['required'] ? 'this felid is required' : ''
+        }}
+      </p>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-danger ms-2" (click)="close()">Close</button>
+
+  </form>
+
+</div>

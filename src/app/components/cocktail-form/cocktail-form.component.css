@@ -1,0 +1,19 @@
+.recipe-form{
+  width: 40vmax;
+}
+label{
+  font-weight: bold;
+}
+p{
+  color:red
+}
+.fa-plus{
+  background-color: var(--black);
+  color: #fff;
+  padding: 7px;
+  border-radius: 2px;
+}
+.ingredients{
+  margin-top: 3px;
+
+}
