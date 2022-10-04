@@ -1,0 +1,17 @@
+<div class="dialog-page">
+  <h3 mat-dialog-title>Select user</h3>
+  <mat-dialog-content>
+  <ul class="list-group" *ngFor="let user of users">
+    <li class="list-group-item" (click)="share(user)">{{user.fname}} {{user.lname}}</li>
+
+  </ul>
+
+    <div class="spanner" *ngIf="!users?.length">
+
+      <div>
+        <img src="../../../assets/img/person1.png" alt="">
+        <span>There are no users yet </span>
+      </div>
+    </div>
+</mat-dialog-content>
+</div>

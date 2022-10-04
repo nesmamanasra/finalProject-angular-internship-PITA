@@ -1,0 +1,18 @@
+<div class="box">
+  <div>
+    <a (click)=" deleteRecipe()"><i class="fa-solid fa-xmark"></i></a>
+    <a (click)="favorate()"><i class="fa-solid fa-heart" [ngClass]="cardser.isfavorate(recipees?.type) ? 'fav' : ''"></i></a>
+  </div>
+  <div class="image">
+    <img [src]="recipees?.type?.image" onerror=" this.src ='../../../assets/img/default-recipe-image.gif'" alt="">
+  </div>
+  <div class="box-content">
+    <p class="title">{{recipees?.type?.title}} </p>
+  </div>
+  <div class="box-btn">
+    <span class="servings">{{recipees?.type?.servings}}</span>
+    <a class="btn" (click)="navigateToRecipeDetails(recipees?.type)"> Details</a>
+
+  </div>
+</div>
+

@@ -32,7 +32,15 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { CocktailDetailsComponent } from './pages/cocktail-details/cocktail-details.component';
 import {ToastNoAnimation, ToastNoAnimationModule, ToastrModule} from 'ngx-toastr'
-import { NotFoundComponent } from './pages/not-found/not-found.component'
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ShareDialogComponent } from './components/share-dialog/share-dialog.component';
+import { ShareCocktailDialogComponent } from './components/share-cocktail-dialog/share-cocktail-dialog.component';
+import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
+import { UserRecipeComponent } from './components/user-recipe/user-recipe.component';
+import { CocktailFormComponent } from './components/cocktail-form/cocktail-form.component';
+import { UserCocktailComponent } from './components/user-cocktail/user-cocktail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +63,13 @@ import { NotFoundComponent } from './pages/not-found/not-found.component'
     RegisterPageComponent,
     ContactPageComponent,
     CocktailDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ShareDialogComponent,
+    ShareCocktailDialogComponent,
+    RecipeFormComponent,
+    UserRecipeComponent,
+    CocktailFormComponent,
+    UserCocktailComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +88,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component'
       timeOut: 1000,
    }),
     ToastNoAnimationModule.forRoot(),
-
+    MatDialogModule
   ],
 
   providers: [],

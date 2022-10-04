@@ -1,17 +1,19 @@
+import { AuthService } from 'src/app/services/auth.service';
+import { ShareDialogComponent } from './../../components/share-dialog/share-dialog.component';
 import { Recipe } from './../../models/Recipe';
 import { CardDataService } from './../../services/card-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
 import { Comment } from '../../models/Comment';
-
+import { MatDialog } from '@angular/material/dialog';
+import { User } from 'src/app/models/User';
 @Component({
   selector: 'app-item-details',
   templateUrl: './item-details.component.html',
   styleUrls: ['./item-details.component.css'],
 })
 export class ItemDetailsComponent implements OnInit {
-  coments? = [1, 2, 2, 3, 3, 44, , 4];
   rating: number = 0;
   starCount: number = 5;
   starColor: StarRatingColor = StarRatingColor.accent;
@@ -23,7 +25,8 @@ export class ItemDetailsComponent implements OnInit {
   constructor(
     router: Router,
     public activeRouter: ActivatedRoute,
-    public cdetser: CardDataService
+    public cdetser: CardDataService,
+    public dialog: MatDialog
   ) {
     this.recipe = JSON.parse(
       JSON.parse(
@@ -45,5 +48,10 @@ export class ItemDetailsComponent implements OnInit {
   addComment() {
     this.cdetser.addCommit(this.comment, this.recipe);
     this.comment = '';
+  }
+  openDialog() {
+    this.dialog.open(ShareDialogComponent, {
+      data: this.recipe,
+    });
   }
 }

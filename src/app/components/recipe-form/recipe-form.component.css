@@ -1,0 +1,9 @@
+.recipe-form{
+  width: 40vmax;
+}
+label{
+  font-weight: bold;
+}
+p{
+  color:red
+}

@@ -6,7 +6,7 @@
   <div>
     <div class="about-content container">
       <div class="image">
-        <img src="{{recipe.image}}" alt="">
+        <img src="{{recipe.image}}" onerror=" this.src ='../../../assets/img/default-recipe-image.gif'" alt="">
 
       </div>
       <div class="aboute-text">
@@ -19,7 +19,7 @@
         </div>
         <div class="detail-buttons">
           <!-- <input type="submit"class="delete-btn  " value="Delete"> -->
-          <input type="submit" class="share-btn  " value="Share">
+          <input mat-raised-button (click)="openDialog()" type="submit" class="share-btn  " value="Share">
 
         </div>
       </div>

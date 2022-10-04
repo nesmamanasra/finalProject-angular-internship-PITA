@@ -16,16 +16,19 @@ export class RecipePageComponent implements OnInit {
     ApiFood.getImge('food').subscribe(
       (params) => {
         this.Image = params;
+
       },
       (error) => {
         console.log(error);
       }
     );
+
   }
 
   ngOnInit(): void {
     this.ApiFood.getRecipeByName('apple').subscribe(
       (params) => {
+        console.log(params)
         this.recipes = params as Recipe[];
         for (let i = 0; i <= this.recipes.length; i++) {
           this.recipes[i] = {
@@ -36,6 +39,7 @@ export class RecipePageComponent implements OnInit {
             image: this.Image.results[i].urls.small_s3,
           };
         }
+
       },
       (error) => {
         console.log(error);
@@ -67,6 +71,7 @@ export class RecipePageComponent implements OnInit {
             instructions: this.recipes[i].instructions,
             image: this.Image.results[i].urls.small_s3,
           };
+
         }
       },
       (error) => {

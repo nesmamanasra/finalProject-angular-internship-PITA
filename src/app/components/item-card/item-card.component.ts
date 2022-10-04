@@ -32,5 +32,5 @@ export class ItemCardComponent implements OnInit {
   favorate() {
     this.userdata.addFavorate(this.recipe as Recipe);
   }
-  
+
 }
