@@ -21,13 +21,12 @@ export class UserCocktailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-  navigateToRecipeDetails(cocktail: any) {
-    if (cocktail) {
-      this.router.navigate([
-        `itemDetail`,
-        { data: JSON.stringify(this.cocktail?.type) },
-      ]);
-    }
+  navigateToCocktailDetails(coctail:any){
+    if (coctail) {
+      // console.log(this.recipe , "this recipe from card")
+      this.router.navigate([`cocktailDetail` , { data:JSON.stringify(coctail)}]);
+
+  }
   }
 
   favorate() {
@@ -36,10 +35,10 @@ export class UserCocktailComponent implements OnInit {
   deleteCocktail() {
     this.userdata.deleteCocktail(this.cocktail!);
   }
-  navigateToCocktailDetails(coctail:any){
-    if (coctail) {
-      this.router.navigate([`cocktailDetail` , { data:JSON.stringify(this.cocktail)}]);
+  // navigateToCocktailDetails(coctail:any){
+  //   if (coctail) {
+  //     this.router.navigate([`cocktailDetail` , { data:JSON.stringify(this.cocktail)}]);
 
-  }
-  }
+  // }
+  // }
 }

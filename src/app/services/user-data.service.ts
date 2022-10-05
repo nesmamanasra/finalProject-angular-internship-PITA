@@ -139,7 +139,7 @@ export class UserDataService {
           share.sharedUserId == user.userId &&
           recipe.instructions == item.shareRecipe.instructions
         ) {
-          this.showTostererror(' This item Shared with User  ');
+          this.showTostererror(` This item Shared with ${user.fname}  `);
           return;
         }
       }
@@ -194,7 +194,7 @@ export class UserDataService {
           share.sharedUserId == user.userId &&
           coctail.instructions == item.shareCocktail.instructions
         ) {
-          this.showTostererror(' This item Shared with User  ');
+          this.showTostererror(` This item Shared with ${user.fname}  `);
           return;
         }
       }
