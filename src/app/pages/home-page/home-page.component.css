@@ -73,7 +73,7 @@
     height: 100vh;
   }
   .home-slider {
-    height: 100%;
+    height:max-content;
   }
   .swiper-slide-string h3 {
     font-size: 40px;
