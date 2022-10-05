@@ -21,7 +21,7 @@ export class CardDataService {
       JSON.parse(localStorage.getItem('Comments') as string) || [];
     this.cardComments.splice(0);
     for (let c of comments) {
-      if (rec.instructions == c.card_id) {
+      if (rec.instructions == c.card_id ) {
         this.cardComments.push(c);
       }
     }
@@ -87,7 +87,6 @@ export class CardDataService {
         user.userId == recipeR.user_id &&
         rec.instructions == recipeR.type.instructions
       ) {
-        console.log('YES');
         return recipeR.rating;
       }
     }

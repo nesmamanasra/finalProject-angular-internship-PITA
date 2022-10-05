@@ -58,6 +58,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 100px;
 }
 .content-items .box {
   overflow: hidden;
@@ -169,4 +170,8 @@ input:focus {
 .notfound {
   text-align: center;
   font-size: 7vmin;
+}
+
+@media(max-width:771px){
+
 }
