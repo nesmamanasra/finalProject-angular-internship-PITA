@@ -76,78 +76,52 @@ export class RegisterPageComponent implements OnInit {
       });
     }
   }
+  massegeErr(massege: string) {
+    this.errorMessage = massege;
+  }
+  massegeError() {
+    if (
+      this.registerForm.get('fname')?.invalid &&
+      this.registerForm.get('fname')?.touched
+    ) {
+      this.errorMessage = 'First Name is required ';
+    } else if (
+      this.registerForm.get('lname')?.invalid &&
+      this.registerForm.get('lname')?.touched
+    ) {
+      this.errorMessage = 'Last Name is required ';
+    } else if (
+      this.registerForm.get('email')?.invalid &&
+      this.registerForm.get('email')?.touched
+    ) {
+      this.errorMessage = 'Email invalid ';
+    } else if (
+      this.registerForm.get('password')?.invalid &&
+      this.registerForm.get('password')?.touched
+    ) {
+      this.errorMessage = 'Password is required ';
+    } else if (
+      this.registerForm.get('addres')?.invalid &&
+      this.registerForm.get('addres')?.touched
+    ) {
+      this.errorMessage = 'Addres is required ';
+    } else if (
+      this.registerForm.get('gender')?.invalid &&
+      this.registerForm.get('gender')?.touched
+    ) {
+      this.errorMessage = 'gender is required ';
+    } else if (
+      this.registerForm.get('age')?.invalid &&
+      this.registerForm.get('age')?.touched
+    ) {
+      this.errorMessage = 'Age is required ';
+    } else if (
+      this.registerForm.get('imgUrl')?.invalid &&
+      this.registerForm.get('imgUrl')?.touched
+    ) {
+      this.errorMessage = 'ImageUrl is required ';
+    } else {
+      this.errorMessage = '';
+    }
+  }
 }
-
-/*
-
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
-import { IUser } from 'src/app/interfaces/user';
-import { AuthService } from 'src/app/services/auth.service';
-import { UserService } from 'src/app/services/user.service';
-
-@Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.css'],
-})
-export class RegisterComponent implements OnInit {
-    registerForm: FormGroup = new FormGroup({
-        firstName: new FormControl('', [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(30),
-        ]),
-        lastName: new FormControl('', [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(30),
-        ]),
-        email: new FormControl('', [Validators.required, Validators.email]),
-        gender: new FormControl('', [Validators.required]),
-        age: new FormControl(null, [
-            Validators.required,
-            Validators.min(13),
-            Validators.max(80),
-        ]),
-        password: new FormControl(null, [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(15),
-        ]),
-    });
-
-    constructor(public auth: AuthService, private userService: UserService, public route: Router) {
-    }
-
-    ngOnInit() {
-    }
-    register() {
-        const newUser: IUser = {
-            id: '',
-            first_name: this.registerForm.value.firstName,
-            last_name: this.registerForm.value.lastName,
-            DOB: this.registerForm.value.age,
-            gender: this.registerForm.value.gender,
-            email: this.registerForm.value.email,
-        }
-
-        this.auth.register(newUser.email, this.registerForm.value.password).then(res => {
-            this.userService.saveUserInfo(newUser).then(res => {
-                console.log(res);
-                this.route.navigate(['/home'])
-            }).catch(err => {
-                console.log(err);
-            })
-        }).catch(err => {
-            console.log(err);
-        })
-    }
-
-    goToLogin(){
-      this.route.navigate(['/login'])
-    }
-}
-
-*/

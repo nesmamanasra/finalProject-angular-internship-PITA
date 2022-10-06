@@ -6,6 +6,12 @@
         <form [formGroup]="registerForm" action="" (ngSubmit)="creatUser()" class="sign-up-form">
 
 
+          <p
+            *ngIf="(registerForm.get('fname')?.invalid && registerForm.get('fname')?.touched)?massegeErr('First Name is required'):  massegeError()">
+          </p>
+
+          <p style="color:red ;">{{errorMessage}}</p>
+
           <h2 class="title">Sign up</h2>
           <div class="name">
             <div class="input-field ">
@@ -60,8 +66,8 @@
         <div class="content">
           <h3>One of us ?</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laboriosam ad deleniti.
+            creat acount to see recipe & cocktail
+
           </p>
           <button class="btn transparent" id="sign-in-btn" routerLink="../login">
             Sign in
