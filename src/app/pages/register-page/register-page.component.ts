@@ -15,12 +15,21 @@ export class RegisterPageComponent implements OnInit {
   gender: string[] = ['Femail', 'Mail'];
   registerForm: FormGroup;
   errorMessage: string = '';
-
+  errorsMap = [
+    { value: 'First Name is required', key: 'fname' },
+    { value: 'Last Name is required', key: 'lname' },
+    { value: 'Email is required', key: 'email' },
+    { value: 'password Name is required', key: 'password' },
+    { value: 'addres Name is required', key: 'addres' },
+    { value: 'age Name is required', key: 'age' },
+    { value: 'gender Name is required', key: 'gender' },
+    { value: 'imgUrl Name is required', key: 'imgUrl' },
+  ];
   constructor(
     public fb: FormBuilder,
     public auths: AuthService,
     public route: Router,
-    public toast:ToastrService
+    public toast: ToastrService
   ) {
     this.registerForm = this.fb.group({
       fname: [, Validators.required],
@@ -61,10 +70,10 @@ export class RegisterPageComponent implements OnInit {
       this.route.navigate(['login']);
     } else {
       this.errorMessage = this.registerForm.getError('fname');
-      this.toast.warning(`plese Check Your Data `,"",{
+      this.toast.warning(`plese Check Your Data `, '', {
         timeOut: 2000,
         positionClass: 'toast-custom',
-     })
+      });
     }
   }
 }

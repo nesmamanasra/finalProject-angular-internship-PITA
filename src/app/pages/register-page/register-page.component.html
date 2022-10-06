@@ -1,75 +1,78 @@
-<div class="splet-screen">
-  <div class="left">
-    <section class="copy">
-      <h1>hello </h1>
-    </section>
-  </div>
-  <div class="right">
-    <form [formGroup]="registerForm" action="" (ngSubmit)="creatUser()">
-      <section class="copy">
-        <div class="register">
+<body>
+  <div class="container-page sign-up-mode">
+    <div class="forms-container">
+      <div class="signin-signup">
+
+        <form [formGroup]="registerForm" action="" (ngSubmit)="creatUser()" class="sign-up-form">
+
+
+          <h2 class="title">Sign up</h2>
+          <div class="name">
+            <div class="input-field ">
+              <i class="fas fa-user"></i>
+              <input type="text" id="fname" name="fname" placeholder="First Name" formControlName="fname" />
+
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="lname" name="lname" placeholder="Last Name" formControlName="lname" />
+            </div>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Email" formControlName="email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Password" formControlName="password" />
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-image"></i>
+            <input type="text" id="img" name="img" placeholder=" Image URL" formControlName="imgUrl" />
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="address" name="address" placeholder="address" formControlName="addres" />
+          </div>
+          <div class="name">
+            <div class="input-field ">
+              <i class="fa-solid fa-person-cane"></i>
+              <input type="number" id="age" name="age" placeholder="Age" formControlName="age" />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-venus-mars"></i>
+              <select name="gender" id="gender" class="" [(ngModel)]="g" formControlName="gender">
+                <option disabled selected>Gender</option>
+                <option [ngValue]="gg" *ngFor="let gg of gender">{{gg}}</option>
+              </select>
+            </div>
+          </div>
+          <input type="submit" class="btn" value="Sign up" />
+
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div>
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us ?</h3>
           <p>
-            <strong>Creat Acount</strong>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            laboriosam ad deleniti.
           </p>
+          <button class="btn transparent" id="sign-in-btn" routerLink="../login">
+            Sign in
+          </button>
         </div>
-
-      </section>
-      <div class="input-section-first-name">
-        <label for="fname"> First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="First Name" formControlName="fname">
-      </div>
-      <div class="input-section-last-name">
-        <label for="lname"> Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Last Name" formControlName="lname">
-      </div>
-      <div class="input-section-email">
-        <label for="email"> Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" formControlName="email">
-      </div>
-      <div class="input-section-password">
-        <label for="password"> Password</label>
-        <input type="password" id="password" name="password" placeholder="Password" formControlName="password">
-      </div>
-      <div class="input-section-CoPassword">
-        <label for="img"> Image URL </label>
-        <input type="text" id="img" name="img" placeholder=" Image URL" formControlName="imgUrl">
-      </div>
-      <div class="input-section-address">
-        <label for="address"> Address </label>
-        <input type="text" id="address" name="address" placeholder="address" formControlName="addres">
-      </div>
-      <div class="d-flex justify-content-between">
-        <div class="input-section-age">
-          <label for="age"> Your Age </label>
-          <input type="number" id="age" name="age" placeholder="Age" formControlName="age">
-        </div>
-
-        <div class="input-section-gender">
-          <label for="gender"> Gender </label>
-          <select name="gender" id="gender" class="" [(ngModel)]="g" formControlName="gender">
-            <option disabled selected>Gender</option>
-            <option [ngValue]="gg" *ngFor="let gg of gender">{{gg}}</option>
-          </select>
+        <div class="ani">
+          <img src="../../assets/img/recipe-register-food.png " class="image " style="width: 100%;" alt="" />
         </div>
       </div>
-
-      <button class="reg-btn">Submit</button>
-      <p class="  text-warning m-3" *ngIf="registerForm.get('fname')?.invalid && registerForm.get('fname')?.touched">
-        {{
-        registerForm.get('fname')?.errors?.['required'] ? 'First Name is required' : ''
-        }}
-
-      </p>
-      <p class="  text-warning m-3"
-        *ngIf="registerForm.get('lname')?.invalid && registerForm.get('lname')?.touched && registerForm.get('fname')?.valid ">
-        {{
-        registerForm.get('lname')?.errors?.['required'] ? 'Last Name is required' : ''
-        }}
-
-      </p>
-
-
-
-    </form>
+    </div>
   </div>
-</div>
+
+
+</body>
