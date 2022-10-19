@@ -1,14 +1,15 @@
-import { Recipe } from './../models/Recipe';
-import { Cocktail } from './../models/Cocktail';
-import { UserDataService } from './user-data.service';
+import { Recipe } from 'src/app/models/Recipe';
+import { Cocktail } from 'src/app/models/Cocktail';
+// import { UserDataService } from './user-data.service';
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { User } from '../models/User';
-import { AuthService } from './auth.service';
-import { Comment } from './../models/Comment';
-import { FavoriteC } from '../models/FavoriteC';
-import { FavoriteR } from '../models/FavoriteR';
-import { Rating } from '../models/Rating';
+import { User } from 'src/app/models/User';
+import { AuthService } from 'src/app/services/auth.service';
+import { Comment } from 'src/app/models/Comment';
+import { FavoriteC } from 'src/app/models/FavoriteC';
+import { FavoriteR } from 'src/app/models/FavoriteR';
+import { Rating } from 'src/app/models/Rating';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Injectable({
   providedIn: 'root',

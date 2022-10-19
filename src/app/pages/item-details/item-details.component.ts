@@ -1,13 +1,16 @@
 import { AuthService } from 'src/app/services/auth.service';
-import { ShareDialogComponent } from './../../components/share-dialog/share-dialog.component';
-import { Recipe } from './../../models/Recipe';
-import { CardDataService } from './../../services/card-data.service';
+// import { ShareDialogComponent } from './../../components/share-dialog/share-dialog.component';
+// import { Recipe } from './../../models/Recipe';
+// import { CardDataService } from './../../services/card-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
 import { Comment } from '../../models/Comment';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/models/User';
+import { ShareDialogComponent } from 'src/app/components/share-dialog/share-dialog.component';
+import { Recipe } from 'src/app/models/Recipe';
+import { CardDataService } from 'src/app/services/card-data.service';
 @Component({
   selector: 'app-item-details',
   templateUrl: './item-details.component.html',

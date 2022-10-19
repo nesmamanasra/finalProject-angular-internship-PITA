@@ -9,10 +9,10 @@ export class UserComentComponent implements OnInit {
   @Input('comment')  comment?:Comment;
   userImge?:string
   ratingC?:number[]=[]
-  constructor() { 
+  constructor() {
     this.comment?.userImage
     this.ratingC=this.comment?.rating as unknown as [];
-    
+
   }
 
   ngOnInit(): void {

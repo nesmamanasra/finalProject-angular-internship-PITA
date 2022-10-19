@@ -1,9 +1,12 @@
-import { UserCocktail } from './../../models/UserCocktail';
+// import { UserCocktail } from './../../models/UserCocktail';
 import { Cocktail } from 'src/app/models/Cocktail';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserCocktail } from 'src/app/models/UserCocktail';
 import { CardDataService } from 'src/app/services/card-data.service';
 import { UserDataService } from 'src/app/services/user-data.service';
+// import { CardDataService } from '../../services/card-data.service';
+// import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-user-cocktail',

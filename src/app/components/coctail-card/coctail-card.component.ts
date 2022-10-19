@@ -1,8 +1,10 @@
 import { CardDataService } from 'src/app/services/card-data.service';
 import { Router } from '@angular/router';
-import { Cocktail } from './../../models/Cocktail';
+// import { Cocktail } from './../../models/Cocktail';
 import { Component, Input, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data.service';
+import { Cocktail } from 'src/app/models/Cocktail';
+// import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-coctail-card',

@@ -1,7 +1,10 @@
-import { FavoriteC } from './../../models/FavoriteC';
-import { FavoriteR } from './../../models/FavoriteR';
-import { UserDataService } from './../../services/user-data.service';
+// import { FavoriteC } from './../../models/FavoriteC';
+// import { FavoriteR } from './../../models/FavoriteR';
+// import { UserDataService } from './../../services/user-data.service';
 import { Component, OnInit } from '@angular/core';
+import { FavoriteC } from 'src/app/models/FavoriteC';
+import { FavoriteR } from 'src/app/models/FavoriteR';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-favorate-page',

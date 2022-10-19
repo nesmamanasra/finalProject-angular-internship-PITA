@@ -69,3 +69,39 @@ header .icon a:hover {
 
 @media (max-width: 768px) {
 }
+
+.fa-heart {
+  color: red;
+  padding: 3px;
+}
+.fa-bowl-food {
+  color: var(--green);
+  padding: 3px;
+}
+.fa-martini-glass-citrus {
+  padding: 3px;
+  color: yellowgreen;
+}
+.dropdown-menu i:hover {
+  /* color:var(--black);
+  background:var(--green); */
+  transform: scale(1.1);
+  background: #eee;
+}
+.drop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.drop .name {
+  /* width: 95%; */
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+.drop .fa-solid {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+.hed-drop {
+  display: flex;
+}

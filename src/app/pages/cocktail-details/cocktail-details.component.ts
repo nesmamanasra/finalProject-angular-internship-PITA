@@ -1,12 +1,13 @@
-import { Cocktail } from './../../models/Cocktail';
+// import { Cocktail } from './../../models/Cocktail';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { StarRatingColor } from 'src/app/components/star-rating/star-rating.component';
-import { CardDataService } from 'src/app/services/card-data.service';
+// import { CardDataService } from '../../services/card-data.service';
 import { Comment } from '../../models/Comment';
 import { MatDialog } from '@angular/material/dialog';
-import { ShareDialogComponent } from 'src/app/components/share-dialog/share-dialog.component';
 import { ShareCocktailDialogComponent } from 'src/app/components/share-cocktail-dialog/share-cocktail-dialog.component';
+import { Cocktail } from 'src/app/models/Cocktail';
+import { CardDataService } from 'src/app/services/card-data.service';
 
 @Component({
   selector: 'app-cocktail-details',

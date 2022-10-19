@@ -1,9 +1,12 @@
-import { AuthService } from './../../services/auth.service';
-import { ShareR } from './../../models/shareR';
-import { UserDataService } from 'src/app/services/user-data.service';
+// import { AuthService } from './../../services/auth.service';
+// import { ShareR } from './../../models/shareR';
+// import { UserDataService } from '../../services/user-data.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
 import { ShareC } from 'src/app/models/shareC';
+import { ShareR } from 'src/app/models/shareR';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-sugesst-page',
@@ -11,7 +14,6 @@ import { ShareC } from 'src/app/models/shareC';
   styleUrls: ['./sugesst-page.component.css'],
 })
 export class SugesstPageComponent implements OnInit {
-  items? = [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2];
 sugesstR?:ShareR[];
 sugesstC?:ShareC[];
 typesugesst: string = 'All';

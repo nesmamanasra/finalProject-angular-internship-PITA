@@ -3,7 +3,7 @@
     <a (click)="favorate()"><i class="fa-solid fa-heart" [ngClass]="cardser.isfavorate(recipe) ? 'fav' : ''"></i></a>
   </div>
   <div class="image">
-    <img [src]="recipe?.image" alt="">
+    <img [src]="recipe?.image" alt=""onerror=" this.src ='../../../assets/img/default-recipe-image.gif'">
   </div>
   <div class="box-content">
     <p class="title">{{recipe?.title}} </p>

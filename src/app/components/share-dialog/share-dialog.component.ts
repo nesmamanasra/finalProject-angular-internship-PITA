@@ -1,9 +1,12 @@
-import { Recipe } from './../../models/Recipe';
-import { UserDataService } from 'src/app/services/user-data.service';
+// import { Recipe } from './../../models/Recipe';
+// import { UserDataService } from '../../services/user-data.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
-import { AuthService } from 'src/app/services/auth.service';
+// import { AuthService } from '../../services/auth.service';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Recipe } from 'src/app/models/Recipe';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-share-dialog',
