@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cocktail } from 'src/app/models/Cocktail';
 import { Recipe } from 'src/app/models/Recipe';
 import { ApiService } from 'src/app/services/api.service';
+// import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-cocktail-page',

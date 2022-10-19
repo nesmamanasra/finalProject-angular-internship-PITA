@@ -19,12 +19,12 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path:'',component:HomePageComponent},
-  {path:'cocktailPage',component:CocktailPageComponent},
-  {path:'recipePage',component:RecipePageComponent},
+  {path:'cocktailPage',component:CocktailPageComponent, canActivate: [AuthGuard]},
+  {path:'recipePage',component:RecipePageComponent, canActivate: [AuthGuard]},
   {path:'login',component:LoginPageComponent},
   {path:'register',component:RegisterPageComponent},
-  {path:'itemDetail',component:ItemDetailsComponent},
-  {path:'cocktailDetail',component:CocktailDetailsComponent},
+  {path:'itemDetail',component:ItemDetailsComponent, canActivate: [AuthGuard]},
+  {path:'cocktailDetail',component:CocktailDetailsComponent, canActivate: [AuthGuard]},
   {path:'userRecipe',component:UserRecipePageComponent, canActivate: [AuthGuard]},
   {path:'userCocktail',component:UserCocktailPageComponent, canActivate: [AuthGuard]},
   {path:'userProfile',component:UserProfilePageComponent, canActivate: [AuthGuard]},

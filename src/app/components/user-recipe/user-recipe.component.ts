@@ -1,9 +1,12 @@
-import { UserRecipe } from './../../models/UserRecipe';
+// import { UserRecipe } from './../../models/UserRecipe';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from 'src/app/models/Recipe';
+import { UserRecipe } from 'src/app/models/UserRecipe';
 import { CardDataService } from 'src/app/services/card-data.service';
 import { UserDataService } from 'src/app/services/user-data.service';
+// import { CardDataService } from '../../services/card-data.service';
+// import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-user-recipe',

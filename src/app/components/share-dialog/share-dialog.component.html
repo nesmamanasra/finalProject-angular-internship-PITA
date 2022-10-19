@@ -1,5 +1,5 @@
 <div class="dialog-page">
-  <h3 mat-dialog-title>Select user</h3>
+  <h3 mat-dialog-title *ngIf="users?.length">Select user</h3>
   <mat-dialog-content>
   <ul class="list-group" *ngFor="let user of users">
     <li class="list-group-item" (click)="share(user)">{{user.fname}} {{user.lname}}</li>

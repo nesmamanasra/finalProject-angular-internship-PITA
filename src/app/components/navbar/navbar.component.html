@@ -28,8 +28,44 @@
       </ul>
       <div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-5 reg">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="userProfile" *ngIf="auths.setoginstatus()">Profile</a>
+          </li> -->
+
+          <li class="nav-item dropdown" *ngIf="auths.setoginstatus()">
+
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              {{user?.fname}} {{user?.lname}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <i class="dropdown-item drop" routerLink="userProfile">
+                  <i class="name">Profile</i>
+                  <i class="fa-solid fa-user"></i></i>
+              </li>
+              <li routerLink="../favorate">
+                <i class="dropdown-item drop">
+                  <i class="name">Favorate</i>
+                  <i class="fa-solid fa-heart"></i></i>
+              </li>
+              <li routerLink="../sugest">
+                <i class="dropdown-item drop">
+                  <i class="name">suggestion</i>
+                  <i class="fa-solid fa-bowl-food  "></i></i>
+              </li>
+              <li routerLink="../userRecipe">
+                <i class="dropdown-item drop">
+                  <i class="name">Your Recipes</i>
+                  <i class="fa-solid fa-utensils"></i></i>
+              </li>
+              <li routerLink="../userCocktail">
+                <i class="dropdown-item drop">
+                  <i class="name">Your Cocktail</i>
+                  <i class="fa-solid fa-martini-glass-citrus"></i></i>
+              </li>
+
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="register" *ngIf="!auths.setoginstatus()">register</a>
@@ -46,4 +82,3 @@
     </div>
   </div>
 </nav>
-

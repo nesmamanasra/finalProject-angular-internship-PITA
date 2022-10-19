@@ -1,6 +1,8 @@
-import { Recipe } from './../../models/Recipe';
-import { ApiService } from './../../services/api.service';
+// import { Recipe } from './../../models/Recipe';
+// import { ApiService } from './../../services/api.service';
 import { Component, OnInit, Output } from '@angular/core';
+import { Recipe } from 'src/app/models/Recipe';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-recipe-page',

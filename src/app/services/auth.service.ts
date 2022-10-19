@@ -1,7 +1,7 @@
 import { ToastrService } from 'ngx-toastr';
-import { User } from './../models/User';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { User } from 'src/app/models/User';
 
 @Injectable({
   providedIn: 'root',

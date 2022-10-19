@@ -1,13 +1,13 @@
-import { UserCocktail } from './../models/UserCocktail';
-import { UserRecipe } from './../models/UserRecipe';
-import { ShareC } from './../models/shareC';
-import { ShareR } from './../models/shareR';
+import { UserCocktail } from 'src/app/models/UserCocktail';
+import { UserRecipe } from 'src/app/models/UserRecipe';
+import { ShareC } from 'src/app/models/shareC';
+import { ShareR } from 'src/app/models/shareR';
 import { Observable, of } from 'rxjs';
 import { Recipe } from 'src/app/models/Recipe';
-import { FavoriteC } from './../models/FavoriteC';
-import { Cocktail } from './../models/Cocktail';
-import { FavoriteR } from './../models/FavoriteR';
-import { User } from './../models/User';
+import { FavoriteC } from 'src/app/models/FavoriteC';
+import { Cocktail } from 'src/app/models/Cocktail';
+import { FavoriteR } from 'src/app/models/FavoriteR';
+import { User } from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
@@ -104,7 +104,7 @@ export class UserDataService {
 
     localStorage.setItem('FavorateC', JSON.stringify(this.FavorateC));
   }
-  getFavorateR(): Observable<any> {
+  getFavorateR(): Observable<FavoriteR[]> {
     const user: User = this.auths.userActive();
     this.itemForUserR.splice(0);
     for (let fav of this.FavorateR) {
@@ -114,7 +114,7 @@ export class UserDataService {
     }
     return of(this.itemForUserR);
   }
-  getFavorateC(): Observable<any> {
+  getFavorateC(): Observable<FavoriteC[]> {
     const user: User = this.auths.userActive();
     this.itemForUser.splice(0);
     for (let fav of this.FavorateC) {

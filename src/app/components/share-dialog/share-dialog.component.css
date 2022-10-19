@@ -26,7 +26,7 @@ h3{
 }
 .spanner div span {
   font-size: 3vmin;
-  font-family: cursive;
+  /* font-family: cursive; */
   display: inline-block;
   padding: 10px;
   margin-top: 20px;
